@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Ekta Sengar</title>
+  <meta name="description" content="Senior Product Manager with 10+ years delivering AI-powered SaaS and marketplace platforms. Engineering background, ISB MBA, currently at Atlassian.">
+  <meta property="og:title" content="About — Ekta Sengar">
+  <meta property="og:description" content="Senior Product Manager with 10+ years delivering AI-powered SaaS and marketplace platforms.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="/css/custom.css">
+</head>
+<body class="font-sans text-slate-600 bg-white antialiased">
+
+  <!-- NAV -->
+  <nav x-data="{ open: false }" class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="text-lg font-semibold text-slate-900 tracking-tight">Ekta Sengar</a>
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+          <a href="/work.html" class="text-slate-500 hover:text-slate-900 transition-colors">Work</a>
+          <a href="/projects.html" class="text-slate-500 hover:text-slate-900 transition-colors">Projects</a>
+          <a href="/blog.html" class="text-slate-500 hover:text-slate-900 transition-colors">Blog</a>
+          <a href="/about.html" class="text-slate-900 font-semibold">About</a>
+        </div>
+        <button @click="open = !open" class="md:hidden p-2 -mr-2 text-slate-500 hover:text-slate-900" aria-label="Toggle menu">
+          <svg x-show="!open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg x-show="open" x-cloak class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div x-show="open" x-transition x-cloak class="md:hidden pb-4 space-y-1 border-t border-slate-100 pt-3">
+        <a href="/work.html" class="block py-2 text-sm text-slate-600 hover:text-slate-900">Work</a>
+        <a href="/projects.html" class="block py-2 text-sm text-slate-600 hover:text-slate-900">Projects</a>
+        <a href="/blog.html" class="block py-2 text-sm text-slate-600 hover:text-slate-900">Blog</a>
+        <a href="/about.html" class="block py-2 text-sm font-semibold text-slate-900">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-5xl mx-auto px-6">
+
+    <!-- HEADER -->
+    <section class="pt-20 pb-12">
+      <p class="text-sm font-medium text-slate-400 uppercase tracking-wider mb-4">About</p>
+      <h1 class="text-3xl md:text-4xl font-bold text-slate-900">Scaling AI-powered platforms and marketplace ecosystems.</h1>
+    </section>
+
+    <div class="grid md:grid-cols-3 gap-12 pb-20">
+
+      <!-- LEFT: Narrative -->
+      <div class="md:col-span-2 prose max-w-none">
+        <p>
+          I'm a Senior Product Manager at Atlassian, where I lead growth and commercialization for a $6B+ Marketplace ecosystem with 6K+ apps, 2K+ partners, and 300K+ customers. I specialize in turning AI capabilities into shipped products with measurable business outcomes.
+        </p>
+        <p>
+          My path to product was through engineering. I spent 4 years as a design engineer at NXP Semiconductors working on automotive computing and object detection, then moved to Intel as a Technical PM for IoT and chip design. That hardware and systems background shapes how I think about product: I respect constraints, I understand what engineers need to do their best work, and I make trade-off decisions grounded in technical reality.
+        </p>
+        <p>
+          Between engineering and Atlassian, I co-founded Foospot (a smart-parking platform using IoT/NFC) and completed my PGP in Management at the Indian School of Business, specializing in Information Technology and Marketing.
+        </p>
+
+        <h2>What I do at Atlassian</h2>
+        <p>
+          I wear two hats. On the <strong>Marketplace Platform & Growth</strong> side, I develop and execute growth strategies leveraging ML/AI experiments — recommendations, personalization, sponsored ads, funnel optimization, and AI agent-assisted discovery. On the <strong>Commerce Platform</strong> side, I built the end-to-end billing and checkout journey as a microservices-based cloud platform onboarding 15+ products and 500+ Marketplace apps at $1B ARR scale.
+        </p>
+        <p>
+          I also lead Atlassian's AI agent onboarding strategy for Marketplace, defining the product roadmap and monetization models (consumption-based and value-based pricing) projected to deliver +$25M ARR uplift.
+        </p>
+
+        <h2>How I work</h2>
+        <ul>
+          <li><strong>Experiment-driven.</strong> I've run 5+ ML/AI experiments, growth A/B tests on purchases and reactivations, and data-driven UX redesigns. I measure everything and let the data decide.</li>
+          <li><strong>Cross-functional alignment.</strong> I collaborate across engineering, design, finance, sales, and GTM — including coordinating with 300+ ecosystem developers for major launches.</li>
+          <li><strong>Builder mindset.</strong> I've personally built 5 AI agents for PM workflows, an AI-powered Partner Insights Tracker, and introduced tools like Vercel v0, Replit, and Figma Make to my team.</li>
+          <li><strong>Write it down.</strong> I lead through written strategy docs, KPI-based leadership updates, and clear roadmaps. I also spearheaded Atlassian's Product Tales Series reaching 150+ PMs.</li>
+        </ul>
+
+        <h2>What I'm building next</h2>
+        <p>
+          Outside Atlassian, I'm working on Jobbie — an AI-powered job search platform that uses RAG and vector search to intelligently match candidates with opportunities across 9 job sources. I'm also deeply interested in generative AI tooling, product-led growth, and AI-native enterprise workflows.
+        </p>
+
+        <h2>Education</h2>
+        <ul>
+          <li><strong>Reforge</strong> — Product Strategy, Mastering Product Management, Data for PM, Growth Series</li>
+          <li><strong>Indian School of Business (ISB)</strong> — PGP in Management (Information & Tech, Marketing)</li>
+          <li><strong>Delhi Technological University (DTU)</strong> — B.Tech, Electronics & Communication Engineering</li>
+        </ul>
+      </div>
+
+      <!-- RIGHT: Sidebar -->
+      <div class="space-y-10">
+
+        <!-- Skills -->
+        <div>
+          <h3 class="text-sm font-semibold text-slate-900 uppercase tracking-wider mb-4">Skills</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs px-3 py-1.5 bg-slate-100 text-slate-600 rounded-full">Product Strategy</span>
+            <span class="text-xs px-3 py-1.5 bg-slate-100 text-slate-600 rounded-full">AI / ML Products</span>
+            <span class="text-xs px-3 py-1.5 bg-slate-100 text-slate-600 rounded-full">B2B SaaS</span>
+            <span class="text-xs px-3 py-1.5 bg-slate-100 text-slate-600 rounded-full">Marketplace Platforms</span>
+            <span class="text-xs px-3 py-1.5 bg-slate-100 text-slate-600 rounded-full">Product-Led Growth</span>
+            <span class="text-xs px-3 py-1.5 bg-slate-100 text-slate-600 rounded-full">A/B Testing</span>
+            <span class="text-xs px-3 py-1.5 bg-slate-100 text-slate-600 rounded-full">User Research</span>
+            <span class="text-xs px-3 py-1.5 bg-slate-100 text-slate-600 rounded-full">Pricing & Monetization</span>
+            <span class="text-xs px-3 py-1.5 bg-slate-100 text-slate-600 rounded-full">LLMs & Generative AI</span>
+            <span class="text-xs px-3 py-1.5 bg-slate-100 text-slate-600 rounded-full">Cross-functional Leadership</span>
+            <span class="text-xs px-3 py-1.5 bg-slate-100 text-slate-600 rounded-full">Data Analysis</span>
+            <span class="text-xs px-3 py-1.5 bg-slate-100 text-slate-600 rounded-full">Enterprise GTM</span>
+          </div>
+        </div>
+
+        <!-- Tools -->
+        <div>
+          <h3 class="text-sm font-semibold text-slate-900 uppercase tracking-wider mb-4">Tools</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs px-3 py-1.5 bg-slate-100 text-slate-600 rounded-full">Figma</span>
+            <span class="text-xs px-3 py-1.5 bg-slate-100 text-slate-600 rounded-full">Jira</span>
+            <span class="text-xs px-3 py-1.5 bg-slate-100 text-slate-600 rounded-full">Amplitude</span>
+            <span class="text-xs px-3 py-1.5 bg-slate-100 text-slate-600 rounded-full">Replit</span>
+            <span class="text-xs px-3 py-1.5 bg-slate-100 text-slate-600 rounded-full">Vercel v0</span>
+            <span class="text-xs px-3 py-1.5 bg-slate-100 text-slate-600 rounded-full">GPT-4 / Claude</span>
+            <span class="text-xs px-3 py-1.5 bg-slate-100 text-slate-600 rounded-full">SQL</span>
+            <span class="text-xs px-3 py-1.5 bg-slate-100 text-slate-600 rounded-full">Python</span>
+            <span class="text-xs px-3 py-1.5 bg-slate-100 text-slate-600 rounded-full">GitHub</span>
+          </div>
+        </div>
+
+        <!-- Location -->
+        <div>
+          <h3 class="text-sm font-semibold text-slate-900 uppercase tracking-wider mb-4">Location</h3>
+          <p class="text-sm text-slate-600">Paris, France</p>
+          <p class="text-xs text-slate-400 mt-1">Open to remote & hybrid</p>
+        </div>
+
+        <!-- Resume -->
+        <div>
+          <h3 class="text-sm font-semibold text-slate-900 uppercase tracking-wider mb-4">Resume</h3>
+          <a href="/assets/resume.pdf" class="inline-flex items-center gap-2 text-sm font-medium text-slate-700 hover:text-slate-900 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            Download PDF
+          </a>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h3 class="text-sm font-semibold text-slate-900 uppercase tracking-wider mb-4">Contact</h3>
+          <ul class="space-y-2 text-sm">
+            <li>
+              <a href="mailto:sengar.ekta@gmail.com" class="text-slate-600 hover:text-slate-900 transition-colors">sengar.ekta@gmail.com</a>
+            </li>
+            <li>
+              <a href="https://linkedin.com/in/ektasengar" class="text-slate-600 hover:text-slate-900 transition-colors">LinkedIn</a>
+            </li>
+            <li>
+              <a href="https://github.com/ektasengar" class="text-slate-600 hover:text-slate-900 transition-colors">GitHub</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-200">
+    <div class="max-w-5xl mx-auto px-6 py-10">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-sm text-slate-400">&copy; 2026 Ekta Sengar. All rights reserved.</p>
+        <div class="flex gap-6 text-sm text-slate-400">
+          <a href="https://github.com/ektasengar" class="hover:text-slate-700 transition-colors">GitHub</a>
+          <a href="https://linkedin.com/in/ektasengar" class="hover:text-slate-700 transition-colors">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

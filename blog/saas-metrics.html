@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The B2B SaaS Metrics That Actually Matter — Ekta Sengar</title>
+  <meta name="description" content="Beyond vanity metrics: a framework for choosing the indicators that drive real business outcomes in B2B SaaS.">
+  <meta property="og:title" content="The B2B SaaS Metrics That Actually Matter">
+  <meta property="og:description" content="Beyond vanity metrics: a framework for choosing indicators that drive real business outcomes.">
+  <meta property="og:type" content="article">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="/css/custom.css">
+</head>
+<body class="font-sans text-slate-600 bg-white antialiased">
+
+  <!-- NAV -->
+  <nav x-data="{ open: false }" class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="text-lg font-semibold text-slate-900 tracking-tight">Ekta Sengar</a>
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+          <a href="/work.html" class="text-slate-500 hover:text-slate-900 transition-colors">Work</a>
+          <a href="/projects.html" class="text-slate-500 hover:text-slate-900 transition-colors">Projects</a>
+          <a href="/blog.html" class="text-slate-900 font-semibold">Blog</a>
+          <a href="/about.html" class="text-slate-500 hover:text-slate-900 transition-colors">About</a>
+        </div>
+        <button @click="open = !open" class="md:hidden p-2 -mr-2 text-slate-500 hover:text-slate-900" aria-label="Toggle menu">
+          <svg x-show="!open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg x-show="open" x-cloak class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div x-show="open" x-transition x-cloak class="md:hidden pb-4 space-y-1 border-t border-slate-100 pt-3">
+        <a href="/work.html" class="block py-2 text-sm text-slate-600 hover:text-slate-900">Work</a>
+        <a href="/projects.html" class="block py-2 text-sm text-slate-600 hover:text-slate-900">Projects</a>
+        <a href="/blog.html" class="block py-2 text-sm font-semibold text-slate-900">Blog</a>
+        <a href="/about.html" class="block py-2 text-sm text-slate-600 hover:text-slate-900">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-3xl mx-auto px-6">
+
+    <!-- BREADCRUMB -->
+    <div class="pt-8 pb-4">
+      <a href="/blog.html" class="text-sm text-slate-400 hover:text-slate-600 transition-colors">&larr; All posts</a>
+    </div>
+
+    <!-- HEADER -->
+    <header class="pb-8 border-b border-slate-100">
+      <div class="flex items-center gap-3 text-xs text-slate-400 mb-4">
+        <time>Dec 8, 2025</time>
+        <span>&middot;</span>
+        <span data-reading-time="#article">6 min read</span>
+        <span>&middot;</span>
+        <span class="px-2 py-0.5 bg-slate-100 rounded-full">B2B SaaS</span>
+      </div>
+      <h1 class="text-3xl md:text-4xl font-bold text-slate-900 leading-tight">The B2B SaaS Metrics That Actually Matter</h1>
+      <p class="mt-4 text-lg text-slate-500">Beyond vanity metrics: a framework for choosing the indicators that drive real business outcomes.</p>
+    </header>
+
+    <!-- ARTICLE -->
+    <article id="article" class="prose max-w-none py-12">
+
+      <p>
+        Every B2B SaaS company tracks metrics. Most track too many. The dashboard has 47 charts, the weekly review covers 12 KPIs, and nobody can explain which ones actually predict business outcomes. I've been in these meetings. They're a waste of everyone's time.
+      </p>
+      <p>
+        Here's what I've learned about metrics after working on several B2B products: the hard part isn't measurement. It's choosing what to measure. And the framework for choosing changes based on where your product is in its lifecycle.
+      </p>
+
+      <h2>The problem with vanity metrics</h2>
+      <p>
+        A vanity metric is any number that goes up and to the right but doesn't connect to a business outcome. Total registered users is the classic example — it never goes down, even when your product is dying. But vanity metrics are more subtle than that. Even "good" metrics become vanity metrics when they're disconnected from your current business context.
+      </p>
+      <p>
+        DAU is a great metric for a consumer social app. For an enterprise B2B tool used weekly by 3 people per account, it's meaningless. NPS is useful for tracking customer sentiment trends, but it's a terrible metric for a feature launch because it moves too slowly and is influenced by too many factors.
+      </p>
+
+      <h2>Leading vs. lagging indicators</h2>
+      <p>
+        The most important distinction in B2B SaaS metrics is between leading and lagging indicators:
+      </p>
+      <ul>
+        <li><strong>Lagging indicators</strong> tell you what already happened: revenue, churn rate, NPS. They're useful for reporting but useless for decision-making because by the time they move, it's too late to change course.</li>
+        <li><strong>Leading indicators</strong> predict what will happen: feature adoption in week 1, support ticket volume, time-to-value for new accounts. These are the metrics that let you intervene before problems become permanent.</li>
+      </ul>
+      <p>
+        The goal of a good metrics framework is to identify the leading indicators that are most predictive of the lagging outcomes you care about. This is harder than it sounds because the relationship between leading and lagging indicators changes as your product matures.
+      </p>
+
+      <h2>Metrics by product stage</h2>
+      <p>
+        The right metrics depend heavily on where your product is. Here's how I think about it:
+      </p>
+
+      <h3>Pre-product-market-fit (0 to ~$1M ARR)</h3>
+      <p>
+        At this stage, the only metric that matters is whether a small number of users are getting intense value. Retention is the signal. Specifically:
+      </p>
+      <ul>
+        <li><strong>Activation rate:</strong> What percentage of new signups reach the "aha moment"?</li>
+        <li><strong>Week-4 retention:</strong> After the novelty wears off, are users still coming back?</li>
+        <li><strong>Qualitative signal:</strong> Are users saying "I'd be very disappointed if this went away"? (The Sean Ellis test)</li>
+      </ul>
+      <p>
+        At this stage, don't track revenue metrics, conversion funnels, or growth rates. Those metrics will actively mislead you because your sample sizes are too small and your product is changing too fast.
+      </p>
+
+      <h3>Post-PMF growth ($1M to ~$10M ARR)</h3>
+      <p>
+        Now efficiency matters. You've proven the product works; the question is whether you can scale the business:
+      </p>
+      <ul>
+        <li><strong>Net revenue retention (NRR):</strong> Are existing customers expanding faster than they're churning? 100%+ means your product grows even without new customers.</li>
+        <li><strong>Time to value (TTV):</strong> How quickly do new customers reach first meaningful outcome? This is the #1 lever for reducing early churn.</li>
+        <li><strong>CAC payback period:</strong> How many months does it take to recoup customer acquisition costs? This tells you how aggressively you can invest in growth.</li>
+      </ul>
+
+      <h3>Scale ($10M+ ARR)</h3>
+      <p>
+        At scale, the metrics become more operational and segmented:
+      </p>
+      <ul>
+        <li><strong>Gross margin:</strong> Can you deliver your product efficiently? Infrastructure costs, support costs, and professional services all eat into margin.</li>
+        <li><strong>Logo churn vs. revenue churn:</strong> Are you losing small customers (normal) or large ones (emergency)?</li>
+        <li><strong>Expansion revenue as % of new ARR:</strong> Healthy B2B SaaS companies get 30–50% of new ARR from existing customers.</li>
+      </ul>
+
+      <h2>The north star metric trap</h2>
+      <p>
+        A lot of product writing advocates for a single "north star metric." In theory, it creates focus. In practice, a single metric creates perverse incentives and blind spots.
+      </p>
+      <p>
+        I prefer a north star metric paired with 2–3 guardrail metrics. The north star is what you're optimizing for. Guardrails are what you're protecting. For example: north star = weekly active reports created (measures core value delivery). Guardrails = report load time under 2 seconds (quality), support tickets per 100 users (usability), data accuracy rate (trust).
+      </p>
+      <p>
+        The north star tells you if you're winning. The guardrails tell you if you're winning sustainably.
+      </p>
+
+      <h2>Practical advice</h2>
+      <p>
+        A few principles I come back to when setting up metrics for a product or feature:
+      </p>
+      <ul>
+        <li><strong>If you can't explain why a metric matters in one sentence, drop it.</strong> Every metric should have a clear connection to a business outcome.</li>
+        <li><strong>Instrument before you ship.</strong> Deciding what to measure after launch means you'll never have clean baseline data.</li>
+        <li><strong>Review less, but deeper.</strong> A weekly 30-minute deep dive on 3 metrics beats a daily scan of 15 dashboards.</li>
+        <li><strong>Segment everything.</strong> Aggregate metrics hide the story. Break down by customer size, cohort, plan tier, geography. The average is almost never the answer.</li>
+        <li><strong>Set alerts on leading indicators.</strong> If week-1 activation drops 10%, you want to know immediately — not in next month's business review.</li>
+      </ul>
+
+      <h2>The bottom line</h2>
+      <p>
+        The best metrics frameworks are simple, stage-appropriate, and action-oriented. They tell you what's happening, why it's happening, and what to do about it. If your metrics don't lead to decisions, they're decoration.
+      </p>
+
+    </article>
+
+    <!-- POST FOOTER -->
+    <div class="border-t border-slate-100 py-10">
+      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+        <div>
+          <p class="text-sm text-slate-500">Thanks for reading. You might also enjoy:</p>
+          <a href="/blog/engineer-to-pm.html" class="text-sm font-medium text-slate-700 hover:text-blue-600 transition-colors">
+            From Engineer to Product Manager: What Nobody Tells You &rarr;
+          </a>
+        </div>
+        <a href="/blog.html" class="text-sm text-slate-400 hover:text-slate-600 transition-colors">All posts</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-200">
+    <div class="max-w-5xl mx-auto px-6 py-10">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-sm text-slate-400">&copy; 2026 Ekta Sengar. All rights reserved.</p>
+        <div class="flex gap-6 text-sm text-slate-400">
+          <a href="https://github.com/ektasengar" class="hover:text-slate-700 transition-colors">GitHub</a>
+          <a href="https://linkedin.com/in/ektasengar" class="hover:text-slate-700 transition-colors">LinkedIn</a>
+
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

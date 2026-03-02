@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Ekta Sengar</title>
+  <meta name="description" content="Writing about AI product management, B2B SaaS strategy, and the craft of building technology products.">
+  <meta property="og:title" content="Blog — Ekta Sengar">
+  <meta property="og:description" content="Writing about AI product management, B2B SaaS strategy, and building technology products.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="/css/custom.css">
+</head>
+<body class="font-sans text-slate-600 bg-white antialiased">
+
+  <!-- NAV -->
+  <nav x-data="{ open: false }" class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="text-lg font-semibold text-slate-900 tracking-tight">Ekta Sengar</a>
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+          <a href="/work.html" class="text-slate-500 hover:text-slate-900 transition-colors">Work</a>
+          <a href="/projects.html" class="text-slate-500 hover:text-slate-900 transition-colors">Projects</a>
+          <a href="/blog.html" class="text-slate-900 font-semibold">Blog</a>
+          <a href="/about.html" class="text-slate-500 hover:text-slate-900 transition-colors">About</a>
+        </div>
+        <button @click="open = !open" class="md:hidden p-2 -mr-2 text-slate-500 hover:text-slate-900" aria-label="Toggle menu">
+          <svg x-show="!open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg x-show="open" x-cloak class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div x-show="open" x-transition x-cloak class="md:hidden pb-4 space-y-1 border-t border-slate-100 pt-3">
+        <a href="/work.html" class="block py-2 text-sm text-slate-600 hover:text-slate-900">Work</a>
+        <a href="/projects.html" class="block py-2 text-sm text-slate-600 hover:text-slate-900">Projects</a>
+        <a href="/blog.html" class="block py-2 text-sm font-semibold text-slate-900">Blog</a>
+        <a href="/about.html" class="block py-2 text-sm text-slate-600 hover:text-slate-900">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-3xl mx-auto px-6">
+
+    <!-- HEADER -->
+    <section class="pt-20 pb-12">
+      <p class="text-sm font-medium text-slate-400 uppercase tracking-wider mb-4">Blog</p>
+      <h1 class="text-3xl md:text-4xl font-bold text-slate-900">Writing about product, AI, and B2B SaaS.</h1>
+      <p class="mt-4 text-lg text-slate-500">Long-form thinking on building technology products. Mostly 5&ndash;8 minute reads.</p>
+    </section>
+
+    <!-- POSTS LIST -->
+    <section class="pb-20 space-y-2">
+
+      <a href="/blog/building-ai-products.html" class="group block py-6 border-b border-slate-100 hover:bg-slate-50 -mx-4 px-4 rounded-lg transition-colors">
+        <div class="flex items-center gap-3 text-xs text-slate-400 mb-2">
+          <time>Jan 15, 2026</time>
+          <span>&middot;</span>
+          <span>7 min read</span>
+          <span>&middot;</span>
+          <span class="text-xs px-2 py-0.5 bg-slate-100 rounded-full">AI</span>
+        </div>
+        <h2 class="text-lg font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">Building AI Products That Actually Ship</h2>
+        <p class="mt-1 text-sm text-slate-500 leading-relaxed">Why most AI product initiatives stall, and a framework for getting from prototype to production.</p>
+      </a>
+
+      <a href="/blog/saas-metrics.html" class="group block py-6 border-b border-slate-100 hover:bg-slate-50 -mx-4 px-4 rounded-lg transition-colors">
+        <div class="flex items-center gap-3 text-xs text-slate-400 mb-2">
+          <time>Dec 8, 2025</time>
+          <span>&middot;</span>
+          <span>6 min read</span>
+          <span>&middot;</span>
+          <span class="text-xs px-2 py-0.5 bg-slate-100 rounded-full">B2B SaaS</span>
+        </div>
+        <h2 class="text-lg font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">The B2B SaaS Metrics That Actually Matter</h2>
+        <p class="mt-1 text-sm text-slate-500 leading-relaxed">Beyond vanity metrics: a framework for choosing the indicators that drive real business outcomes.</p>
+      </a>
+
+      <a href="/blog/engineer-to-pm.html" class="group block py-6 border-b border-slate-100 hover:bg-slate-50 -mx-4 px-4 rounded-lg transition-colors">
+        <div class="flex items-center gap-3 text-xs text-slate-400 mb-2">
+          <time>Nov 20, 2025</time>
+          <span>&middot;</span>
+          <span>8 min read</span>
+          <span>&middot;</span>
+          <span class="text-xs px-2 py-0.5 bg-slate-100 rounded-full">Career</span>
+        </div>
+        <h2 class="text-lg font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">From Engineer to Product Manager: What Nobody Tells You</h2>
+        <p class="mt-1 text-sm text-slate-500 leading-relaxed">The mindset shifts, skill gaps, and hard-won lessons from switching from building to deciding what to build.</p>
+      </a>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-200">
+    <div class="max-w-5xl mx-auto px-6 py-10">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-sm text-slate-400">&copy; 2026 Ekta Sengar. All rights reserved.</p>
+        <div class="flex gap-6 text-sm text-slate-400">
+          <a href="https://github.com/ektasengar" class="hover:text-slate-700 transition-colors">GitHub</a>
+          <a href="https://linkedin.com/in/ektasengar" class="hover:text-slate-700 transition-colors">LinkedIn</a>
+
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

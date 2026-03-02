@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ekta Sengar — Senior Product Manager, AI & B2B SaaS</title>
+  <meta name="description" content="Senior Product Manager with 10+ years delivering AI-powered SaaS and marketplace platforms from 0→1. Currently at Atlassian, scaling a $6B+ Marketplace ecosystem.">
+  <meta property="og:title" content="Ekta Sengar — Senior Product Manager, AI & B2B SaaS">
+  <meta property="og:description" content="Senior Product Manager with 10+ years delivering AI-powered SaaS and marketplace platforms from 0→1.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="/css/custom.css">
+</head>
+<body class="font-sans text-slate-600 bg-white antialiased">
+
+  <!-- NAV -->
+  <nav x-data="{ open: false }" class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="text-lg font-semibold text-slate-900 tracking-tight">Ekta Sengar</a>
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+          <a href="/work.html" class="text-slate-500 hover:text-slate-900 transition-colors">Work</a>
+          <a href="/projects.html" class="text-slate-500 hover:text-slate-900 transition-colors">Projects</a>
+          <a href="/blog.html" class="text-slate-500 hover:text-slate-900 transition-colors">Blog</a>
+          <a href="/about.html" class="text-slate-500 hover:text-slate-900 transition-colors">About</a>
+        </div>
+        <button @click="open = !open" class="md:hidden p-2 -mr-2 text-slate-500 hover:text-slate-900" aria-label="Toggle menu">
+          <svg x-show="!open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg x-show="open" x-cloak class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div x-show="open" x-transition x-cloak class="md:hidden pb-4 space-y-1 border-t border-slate-100 pt-3">
+        <a href="/work.html" class="block py-2 text-sm text-slate-600 hover:text-slate-900">Work</a>
+        <a href="/projects.html" class="block py-2 text-sm text-slate-600 hover:text-slate-900">Projects</a>
+        <a href="/blog.html" class="block py-2 text-sm text-slate-600 hover:text-slate-900">Blog</a>
+        <a href="/about.html" class="block py-2 text-sm text-slate-600 hover:text-slate-900">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="max-w-5xl mx-auto px-6 pt-20 pb-16">
+      <p class="text-sm font-medium text-slate-400 uppercase tracking-wider mb-4">Senior Product Manager — AI, SaaS & Marketplaces</p>
+      <h1 class="text-4xl md:text-5xl font-bold text-slate-900 leading-tight max-w-3xl">
+        I build AI-powered platforms that scale to $1B+ in revenue.
+      </h1>
+      <p class="mt-6 text-lg text-slate-500 max-w-2xl leading-relaxed">
+        Currently at Atlassian, leading growth and commercialization for a $6B+ Marketplace with 6K+ apps and 300K+ customers. 10+ years shipping products from 0&rarr;1 across AI, B2B SaaS, and commerce platforms.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href="/work.html" class="inline-flex items-center px-5 py-2.5 bg-slate-900 text-white text-sm font-medium rounded-lg hover:bg-slate-800 transition-colors">
+          View my work
+          <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+        <a href="/about.html" class="inline-flex items-center px-5 py-2.5 border border-slate-300 text-slate-700 text-sm font-medium rounded-lg hover:bg-slate-50 transition-colors">
+          About me
+        </a>
+      </div>
+    </section>
+
+    <!-- FEATURED WORK -->
+    <section class="max-w-5xl mx-auto px-6 py-16 border-t border-slate-100">
+      <div class="flex items-center justify-between mb-10">
+        <h2 class="text-xl font-semibold text-slate-900">Featured Work</h2>
+        <a href="/work.html" class="text-sm font-medium text-slate-400 hover:text-slate-700 transition-colors">View all &rarr;</a>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+
+        <!-- Case Study 1 -->
+        <a href="/work/marketplace-ai-growth.html" class="group block p-6 border border-slate-200 rounded-xl hover:border-slate-300 hover:shadow-sm transition-all">
+          <p class="text-xs font-medium text-slate-400 uppercase tracking-wider mb-2">AI / Marketplace Growth</p>
+          <h3 class="text-base font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">Marketplace AI-Powered Growth</h3>
+          <p class="mt-2 text-sm text-slate-500 leading-relaxed">Led 5 ML/AI experiments on Atlassian's $6B+ Marketplace, driving +3.7% app conversion and +7K paid installs.</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="tag-pill text-xs px-2.5 py-1 bg-slate-100 text-slate-600 rounded-full">AI</span>
+            <span class="tag-pill text-xs px-2.5 py-1 bg-slate-100 text-slate-600 rounded-full">Growth</span>
+            <span class="tag-pill text-xs px-2.5 py-1 bg-slate-100 text-slate-600 rounded-full">ML</span>
+          </div>
+        </a>
+
+        <!-- Case Study 2 -->
+        <a href="/work/commerce-platform.html" class="group block p-6 border border-slate-200 rounded-xl hover:border-slate-300 hover:shadow-sm transition-all">
+          <p class="text-xs font-medium text-slate-400 uppercase tracking-wider mb-2">Commerce / B2B SaaS</p>
+          <h3 class="text-base font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">Commerce Platform: Billing & Checkout</h3>
+          <p class="mt-2 text-sm text-slate-500 leading-relaxed">Built end-to-end billing microservices for Atlassian's cloud, scaling to $1B ARR across 15+ products.</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="tag-pill text-xs px-2.5 py-1 bg-slate-100 text-slate-600 rounded-full">B2B SaaS</span>
+            <span class="tag-pill text-xs px-2.5 py-1 bg-slate-100 text-slate-600 rounded-full">Commerce</span>
+            <span class="tag-pill text-xs px-2.5 py-1 bg-slate-100 text-slate-600 rounded-full">Microservices</span>
+          </div>
+        </a>
+
+        <!-- Case Study 3 -->
+        <a href="/work/enterprise-licensing.html" class="group block p-6 border border-slate-200 rounded-xl hover:border-slate-300 hover:shadow-sm transition-all">
+          <p class="text-xs font-medium text-slate-400 uppercase tracking-wider mb-2">Enterprise / Platform</p>
+          <h3 class="text-base font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">Enterprise Licensing for Marketplace</h3>
+          <p class="mt-2 text-sm text-slate-500 leading-relaxed">Launched enterprise licensing enabling $15M+ ACV with PwC, Citi, Ford, and 600K+ seats.</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="tag-pill text-xs px-2.5 py-1 bg-slate-100 text-slate-600 rounded-full">Enterprise</span>
+            <span class="tag-pill text-xs px-2.5 py-1 bg-slate-100 text-slate-600 rounded-full">Platform</span>
+            <span class="tag-pill text-xs px-2.5 py-1 bg-slate-100 text-slate-600 rounded-full">GTM</span>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- RECENT WRITING -->
+    <section class="max-w-5xl mx-auto px-6 py-16 border-t border-slate-100">
+      <div class="flex items-center justify-between mb-10">
+        <h2 class="text-xl font-semibold text-slate-900">Recent Writing</h2>
+        <a href="/blog.html" class="text-sm font-medium text-slate-400 hover:text-slate-700 transition-colors">All posts &rarr;</a>
+      </div>
+      <div class="space-y-6">
+
+        <a href="/blog/building-ai-products.html" class="group block p-6 border border-slate-200 rounded-xl hover:border-slate-300 hover:shadow-sm transition-all">
+          <div class="flex items-center gap-3 text-xs text-slate-400 mb-2">
+            <time>Jan 15, 2026</time>
+            <span>&middot;</span>
+            <span>7 min read</span>
+          </div>
+          <h3 class="text-base font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">Building AI Products That Actually Ship</h3>
+          <p class="mt-1 text-sm text-slate-500">Why most AI product initiatives stall, and a framework for getting from prototype to production.</p>
+        </a>
+
+        <a href="/blog/saas-metrics.html" class="group block p-6 border border-slate-200 rounded-xl hover:border-slate-300 hover:shadow-sm transition-all">
+          <div class="flex items-center gap-3 text-xs text-slate-400 mb-2">
+            <time>Dec 8, 2025</time>
+            <span>&middot;</span>
+            <span>6 min read</span>
+          </div>
+          <h3 class="text-base font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">The B2B SaaS Metrics That Actually Matter</h3>
+          <p class="mt-1 text-sm text-slate-500">Beyond vanity metrics: a framework for choosing the indicators that drive real business outcomes.</p>
+        </a>
+
+        <a href="/blog/engineer-to-pm.html" class="group block p-6 border border-slate-200 rounded-xl hover:border-slate-300 hover:shadow-sm transition-all">
+          <div class="flex items-center gap-3 text-xs text-slate-400 mb-2">
+            <time>Nov 20, 2025</time>
+            <span>&middot;</span>
+            <span>8 min read</span>
+          </div>
+          <h3 class="text-base font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">From Engineer to Product Manager: What Nobody Tells You</h3>
+          <p class="mt-1 text-sm text-slate-500">The mindset shifts, skill gaps, and hard-won lessons from switching from building to deciding what to build.</p>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="max-w-5xl mx-auto px-6 py-16 border-t border-slate-100">
+      <div class="max-w-2xl">
+        <h2 class="text-xl font-semibold text-slate-900 mb-3">Let's work together</h2>
+        <p class="text-slate-500 mb-6">I'm open to senior product leadership roles in AI and B2B SaaS. Based in Paris, open to remote and hybrid. If you're building something ambitious, I'd love to hear about it.</p>
+        <a href="mailto:sengar.ekta@gmail.com" class="inline-flex items-center px-5 py-2.5 bg-slate-900 text-white text-sm font-medium rounded-lg hover:bg-slate-800 transition-colors">
+          Get in touch
+          <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-200">
+    <div class="max-w-5xl mx-auto px-6 py-10">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-sm text-slate-400">&copy; 2026 Ekta Sengar. All rights reserved.</p>
+        <div class="flex gap-6 text-sm text-slate-400">
+          <a href="https://github.com/ektasengar" class="hover:text-slate-700 transition-colors">GitHub</a>
+          <a href="https://linkedin.com/in/ektasengar" class="hover:text-slate-700 transition-colors">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

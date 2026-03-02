@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enterprise Licensing for Marketplace — Ekta Sengar</title>
+  <meta name="description" content="Case study: Launching enterprise licensing to unlock large-deal velocity across Atlassian's Marketplace ecosystem. $15M+ ACV, 600K+ enterprise seats.">
+  <meta property="og:title" content="Enterprise Licensing for Marketplace — Case Study">
+  <meta property="og:description" content="Launching enterprise licensing to unlock large-deal velocity across Atlassian's Marketplace ecosystem.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="/css/custom.css">
+</head>
+<body class="font-sans text-slate-600 bg-white antialiased">
+
+  <!-- NAV -->
+  <nav x-data="{ open: false }" class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="text-lg font-semibold text-slate-900 tracking-tight">Ekta Sengar</a>
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+          <a href="/work.html" class="text-slate-900 font-semibold">Work</a>
+          <a href="/projects.html" class="text-slate-500 hover:text-slate-900 transition-colors">Projects</a>
+          <a href="/blog.html" class="text-slate-500 hover:text-slate-900 transition-colors">Blog</a>
+          <a href="/about.html" class="text-slate-500 hover:text-slate-900 transition-colors">About</a>
+        </div>
+        <button @click="open = !open" class="md:hidden p-2 -mr-2 text-slate-500 hover:text-slate-900" aria-label="Toggle menu">
+          <svg x-show="!open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg x-show="open" x-cloak class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div x-show="open" x-transition x-cloak class="md:hidden pb-4 space-y-1 border-t border-slate-100 pt-3">
+        <a href="/work.html" class="block py-2 text-sm font-semibold text-slate-900">Work</a>
+        <a href="/projects.html" class="block py-2 text-sm text-slate-600 hover:text-slate-900">Projects</a>
+        <a href="/blog.html" class="block py-2 text-sm text-slate-600 hover:text-slate-900">Blog</a>
+        <a href="/about.html" class="block py-2 text-sm text-slate-600 hover:text-slate-900">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-3xl mx-auto px-6">
+
+    <!-- BREADCRUMB -->
+    <div class="pt-8 pb-4">
+      <a href="/work.html" class="text-sm text-slate-400 hover:text-slate-600 transition-colors">&larr; All case studies</a>
+    </div>
+
+    <!-- HEADER -->
+    <header class="pb-10 border-b border-slate-100">
+      <p class="text-xs font-medium text-slate-400 uppercase tracking-wider mb-3">Case Study</p>
+      <h1 class="text-3xl md:text-4xl font-bold text-slate-900 leading-tight">Enterprise Licensing for Marketplace</h1>
+      <p class="mt-4 text-lg text-slate-500">Launching enterprise licensing to unlock large-deal velocity across Atlassian's Marketplace ecosystem.</p>
+      <div class="mt-6 flex flex-wrap gap-2">
+        <span class="text-xs px-2.5 py-1 bg-slate-100 text-slate-600 rounded-full">Enterprise</span>
+        <span class="text-xs px-2.5 py-1 bg-slate-100 text-slate-600 rounded-full">Platform</span>
+        <span class="text-xs px-2.5 py-1 bg-slate-100 text-slate-600 rounded-full">GTM</span>
+        <span class="text-xs px-2.5 py-1 bg-slate-100 text-slate-600 rounded-full">Ecosystem</span>
+      </div>
+    </header>
+
+    <!-- ARTICLE -->
+    <article id="article" class="prose max-w-none py-12">
+
+      <!-- Quick metrics banner -->
+      <div class="not-prose grid grid-cols-3 gap-4 p-6 bg-slate-50 rounded-xl mb-10">
+        <div class="text-center">
+          <p class="text-2xl font-bold text-slate-900">$15M+</p>
+          <p class="text-xs text-slate-500 mt-1">ACV</p>
+        </div>
+        <div class="text-center">
+          <p class="text-2xl font-bold text-slate-900">600K+</p>
+          <p class="text-xs text-slate-500 mt-1">Enterprise seats</p>
+        </div>
+        <div class="text-center">
+          <p class="text-2xl font-bold text-slate-900">300+</p>
+          <p class="text-xs text-slate-500 mt-1">Ecosystem developers</p>
+        </div>
+      </div>
+
+      <h2>Context</h2>
+      <p>
+        Atlassian Marketplace had 6K+ apps but no standardized enterprise licensing model. Large enterprise customers (Fortune 500) buying Atlassian products also needed third-party Marketplace apps, but there was no way to license them at enterprise scale &mdash; no volume pricing, no centralized procurement, no compliance-ready agreements.
+      </p>
+
+      <h2>Problem</h2>
+      <ul>
+        <li>Enterprise customers couldn't procure Marketplace apps through standard enterprise purchasing workflows</li>
+        <li>No volume licensing or centralized billing for app bundles</li>
+        <li>Each of the 2K+ partners had different licensing terms, creating procurement friction</li>
+        <li>Large deals (PwC, Citi, Ford, Honeywell, Accenture) were blocked or delayed by licensing gaps</li>
+        <li>Marketplace apps couldn't participate in enterprise-level seat migrations (Data Center &rarr; Cloud)</li>
+      </ul>
+
+      <h2>My Role</h2>
+      <p>
+        Owned end-to-end launch of enterprise licensing for Marketplace apps. Collaborated with engineering, design, finance, sales, and GTM teams, plus 300+ ecosystem developers/partners. Managed the full lifecycle from strategy through launch to post-launch optimization.
+      </p>
+
+      <h2>Decisions &amp; Trade-offs</h2>
+
+      <h3>Standardized framework vs. per-partner flexibility</h3>
+      <p>
+        Built a standardized licensing framework that all partners could adopt, rather than custom agreements per partner. This reduced procurement friction at the cost of some partner-specific flexibility, but the scale benefits were enormous.
+      </p>
+
+      <h3>Partner-first GTM</h3>
+      <p>
+        Coordinated with 300+ ecosystem developers on the launch. This was slower than an internal-only launch but critical for ecosystem trust and adoption.
+      </p>
+
+      <h3>Tied to cloud migration</h3>
+      <p>
+        Scaled Marketplace tiers to 100K+ users and tied enterprise licensing to the Data Center &rarr; Cloud migration path, unlocking 1.9M+ Jira seat migrations and boosting adoption by 20%.
+      </p>
+
+      <h3>Enterprise sales enablement</h3>
+      <p>
+        Built sales enablement materials and pricing tools for Atlassian's enterprise sales team, making Marketplace apps part of the enterprise deal narrative rather than an afterthought.
+      </p>
+
+      <h2>Metrics &amp; Results</h2>
+      <ul>
+        <li><strong>$15M+ ACV</strong> enabled (PwC, Citi, Ford, Honeywell, Accenture)</li>
+        <li><strong>600K+ enterprise seats</strong> unlocked</li>
+        <li><strong>300+ ecosystem developers</strong> onboarded to the new licensing model</li>
+        <li><strong>Marketplace tiers scaled to 100K+ users</strong></li>
+        <li><strong>1.9M+ Jira seat migrations</strong> unlocked</li>
+        <li><strong>+20% boost</strong> in Data Center &rarr; Cloud adoption</li>
+        <li><strong>Enterprise Marketplace</strong> became part of standard enterprise deal packaging</li>
+      </ul>
+
+      <h2>Links</h2>
+      <div class="not-prose flex gap-4">
+        <a href="#" class="inline-flex items-center gap-1.5 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors border border-slate-200 px-4 py-2 rounded-lg">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+          Live Demo
+        </a>
+        <a href="#" class="inline-flex items-center gap-1.5 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors border border-slate-200 px-4 py-2 rounded-lg">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          GitHub
+        </a>
+      </div>
+
+      <h2>Learnings</h2>
+      <ul>
+        <li><strong>Platform strategy is ecosystem strategy.</strong> Enterprise licensing wasn't just a product feature &mdash; it was an ecosystem play. Getting 300+ partners aligned was harder than building the technology, but it was the difference between a feature and a platform shift.</li>
+        <li><strong>Enterprise deals need packaging, not just features.</strong> The licensing model itself was table stakes. What closed deals was packaging: bundled pricing, compliance-ready agreements, and sales enablement that made Marketplace apps part of the enterprise conversation.</li>
+        <li><strong>Migration is a distribution channel.</strong> Tying enterprise licensing to the DC&rarr;Cloud migration turned a mandatory customer action into a distribution channel for Marketplace apps. 1.9M+ seat migrations became 1.9M+ licensing opportunities.</li>
+        <li><strong>Coordinate early, launch fast.</strong> Spending extra time upfront aligning with 300+ partners paid off in launch velocity. Partners who felt included in the process became advocates, not blockers.</li>
+      </ul>
+
+    </article>
+
+    <!-- NEXT/PREV -->
+    <div class="border-t border-slate-100 py-10 flex justify-between">
+      <a href="/work/commerce-platform.html" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">
+        &larr; Prev: Commerce Platform: Billing &amp; Checkout
+      </a>
+      <div></div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-200">
+    <div class="max-w-5xl mx-auto px-6 py-10">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-sm text-slate-400">&copy; 2026 Ekta Sengar. All rights reserved.</p>
+        <div class="flex gap-6 text-sm text-slate-400">
+          <a href="https://github.com/ektasengar" class="hover:text-slate-700 transition-colors">GitHub</a>
+          <a href="https://linkedin.com/in/ektasengar" class="hover:text-slate-700 transition-colors">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
