@@ -62,8 +62,42 @@
       <p class="mt-4 text-lg text-slate-500 max-w-2xl">Side projects, open-source tools, and experiments. Filter by technology or domain.</p>
     </section>
 
+    <!-- FEATURED PROJECTS -->
+    <section class="pb-12">
+      <p class="text-xs font-medium text-slate-400 uppercase tracking-wider mb-4">Featured</p>
+      <div class="grid md:grid-cols-2 gap-6">
+        <template x-for="project in projects.filter(p => p.featured)" :key="project.name">
+          <div class="p-6 border-2 border-slate-900 rounded-xl bg-slate-50 relative">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-xs font-mono text-slate-400 bg-white px-2 py-0.5 rounded border border-slate-200" x-text="project.label"></span>
+            </div>
+            <h2 class="text-lg font-semibold text-slate-900" x-text="project.name"></h2>
+            <p class="mt-2 text-sm text-slate-500 leading-relaxed" x-text="project.description"></p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <template x-for="tag in project.tags" :key="tag">
+                <span class="text-xs px-2.5 py-1 bg-white text-slate-600 rounded-full border border-slate-200" x-text="tag"></span>
+              </template>
+            </div>
+            <div class="mt-5 flex items-center gap-4">
+              <a :href="project.github" class="inline-flex items-center gap-1.5 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                GitHub
+              </a>
+              <template x-if="project.demo">
+                <a :href="project.demo" class="inline-flex items-center gap-1.5 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                  Demo
+                </a>
+              </template>
+            </div>
+          </div>
+        </template>
+      </div>
+    </section>
+
     <!-- FILTER BAR -->
     <section class="pb-8">
+      <p class="text-xs font-medium text-slate-400 uppercase tracking-wider mb-4">All Projects</p>
       <div class="flex flex-wrap gap-2">
         <button
           @click="filter = 'all'"
@@ -85,7 +119,7 @@
     <!-- PROJECTS GRID -->
     <section class="pb-20">
       <div class="grid md:grid-cols-2 gap-6">
-        <template x-for="project in filteredProjects" :key="project.name">
+        <template x-for="project in filteredProjects.filter(p => !p.featured)" :key="project.name">
           <div class="p-6 border border-slate-200 rounded-xl hover:border-slate-300 hover:shadow-sm transition-all">
             <h2 class="text-base font-semibold text-slate-900" x-text="project.name"></h2>
             <p class="mt-2 text-sm text-slate-500 leading-relaxed" x-text="project.description"></p>
@@ -144,8 +178,8 @@
           {"name":"Billing Microservices Platform","description":"End-to-end billing and checkout microservices (subscriptions, usage, quotes, payments) for Atlassian's cloud platform. Scaled to $1B ARR across 15+ products and 500+ Marketplace apps.","tags":["Backend","B2B SaaS","Microservices"],"demo":null,"github":"https://github.com/ektasengar"},
           {"name":"Enterprise Licensing Framework","description":"Enterprise licensing system for Atlassian Marketplace apps. Enabled $15M+ ACV with clients like PwC, Citi, Ford, Honeywell, and Accenture, unlocking 600K+ enterprise seats.","tags":["B2B SaaS","Enterprise","Growth"],"demo":null,"github":"https://github.com/ektasengar"},
           {"name":"Growth Experiment Framework","description":"A/B testing and growth experiment framework for in-product purchases, upgrades, and reactivations. Achieved +3% first purchase growth and -4% churn across Atlassian commerce flows.","tags":["Growth","Analytics","B2B SaaS"],"demo":null,"github":"https://github.com/ektasengar"},
-          {"name":"Foospot Smart Parking Platform","description":"IoT/NFC-powered smart parking platform (co-founder). Reduced parking costs by 7.5x, served 6K+ customers/quarter. Launched at AutoExpo'16 and scaled across public and private lots.","tags":["IoT","Startup","Full Stack"],"demo":null,"github":"https://github.com/ektasengar"},
-          {"name":"Jobbie \u2014 AI Job Search Platform","description":"AI-powered job search platform using RAG for intelligent matching. Aggregates listings from 9 sources (Greenhouse, Lever, Ashby, etc.), features NLP search, resume-based matching, and an AI career assistant. Built with React, Node.js, PostgreSQL, and vector search.","tags":["AI","Full Stack","LLM","RAG"],"demo":null,"github":"https://github.com/ektasengar"},
+          {"name":"Foospot Smart Parking Platform","description":"IoT/NFC-powered smart parking platform (co-founder). Reduced parking costs by 7.5x, served 6K+ customers/quarter. Launched at AutoExpo'16 and scaled across public and private lots.","tags":["IoT","Startup","Full Stack"],"demo":null,"github":"https://github.com/ektasengar","featured":true,"label":"// co-founder · startup"},
+          {"name":"Jobbie — AI Job Search Platform","description":"AI-powered job search platform using RAG for intelligent matching. Aggregates listings from 9 sources (Greenhouse, Lever, Ashby, etc.), features NLP search, resume-based matching, and an AI career assistant. Built with React, Node.js, PostgreSQL, and vector search.","tags":["AI","Full Stack","LLM","RAG"],"demo":null,"github":"https://github.com/ektasengar","featured":true,"label":"// side project · 2025"},
           {"name":"IC Reliability Infrastructure","description":"Reliability infrastructure for Intel's $1B+ IoT and chip design portfolio. Standardized adoption across teams, saving ~$1M. Received AHM Star Award (top 0.5% of org).","tags":["Systems","Hardware","Backend"],"demo":null,"github":"https://github.com/ektasengar"}
         ],
         get allTags() {
