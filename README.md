@@ -1,4 +1,4 @@
-# Portfolio — Tech Product Manager
+# Portfolio — Product Manager
 
 A minimal, static personal portfolio site optimized for GitHub Pages deployment.
 
