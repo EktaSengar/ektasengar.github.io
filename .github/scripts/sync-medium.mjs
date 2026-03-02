@@ -19,6 +19,13 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const FEED_URL = 'https://medium.com/feed/@ekta-sengar';
 const OUTPUT_PATH = resolve(__dirname, '../../data/medium.json');
 
+// Articles to exclude from the portfolio (URL slugs)
+const EXCLUDED_SLUGS = [
+  'the-dying-relationships-605f5bfaea1a',
+  'again-i-ovary-acted-period-f38da8304da6',
+  'quitting-the-no-to-social-swiping-e63dcf905c1d',
+];
+
 // ── Helpers ────────────────────────────────────────────────
 
 /** Strip HTML tags and decode common entities */
@@ -126,7 +133,10 @@ async function main() {
     return true;
   });
 
-  const json = JSON.stringify(unique, null, 2) + '\n';
+  // Remove excluded articles
+  const filtered = unique.filter((a) => !EXCLUDED_SLUGS.some((slug) => a.url.includes(slug)));
+
+  const json = JSON.stringify(filtered, null, 2) + '\n';
 
   // Only write if content actually changed
   let existing = '';
@@ -138,7 +148,7 @@ async function main() {
     console.log('No changes detected — medium.json is up to date.');
   } else {
     writeFileSync(OUTPUT_PATH, json, 'utf-8');
-    console.log(`Updated ${OUTPUT_PATH} with ${unique.length} articles.`);
+    console.log(`Updated ${OUTPUT_PATH} with ${filtered.length} articles (${unique.length - filtered.length} excluded).`);
   }
 }
 
