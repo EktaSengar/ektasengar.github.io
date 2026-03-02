@@ -163,7 +163,7 @@
         </a>
 
         <!-- Latest Medium article (auto-synced from data/medium.json) -->
-        <div x-data="{ article: null }" x-init="fetch('data/medium.json').then(r => r.json()).then(d => { if (d.length) article = d[0]; })">
+        <div x-data="{ article: null }" x-init="fetch('data/medium.json', { cache: 'no-cache' }).then(r => r.json()).then(d => { if (d.length) article = d[0]; })">
           <a x-show="article" x-cloak :href="article?.url" target="_blank" rel="noopener" class="group block p-6 border border-slate-200 rounded-xl hover:border-slate-300 hover:shadow-sm transition-all">
             <div class="flex items-center gap-3 text-xs text-slate-400 mb-2">
               <time x-text="article?.date"></time>
