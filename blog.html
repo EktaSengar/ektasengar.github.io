@@ -136,7 +136,7 @@
         articles: [],
         async init() {
           try {
-            const res = await fetch('data/medium.json');
+            const res = await fetch('data/medium.json', { cache: 'no-cache' });
             if (!res.ok) throw new Error(`HTTP ${res.status}`);
             this.articles = await res.json();
           } catch (e) {
