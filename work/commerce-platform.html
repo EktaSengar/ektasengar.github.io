@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Commerce Platform: Billing & Checkout — Ekta Sengar</title>
+  <meta name="description" content="Case study: Building the end-to-end billing and checkout journey for Atlassian's cloud platform from 0→1, processing $1B ARR with +9% SEQ improvement.">
+  <meta property="og:title" content="Commerce Platform: Billing & Checkout — Case Study">
+  <meta property="og:description" content="Building the end-to-end billing and checkout journey for Atlassian's cloud platform from 0→1.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="/css/custom.css">
+</head>
+<body class="font-sans text-slate-600 bg-white antialiased">
+
+  <!-- NAV -->
+  <nav x-data="{ open: false }" class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="text-lg font-semibold text-slate-900 tracking-tight">Ekta Sengar</a>
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+          <a href="/work.html" class="text-slate-900 font-semibold">Work</a>
+          <a href="/projects.html" class="text-slate-500 hover:text-slate-900 transition-colors">Projects</a>
+          <a href="/blog.html" class="text-slate-500 hover:text-slate-900 transition-colors">Blog</a>
+          <a href="/about.html" class="text-slate-500 hover:text-slate-900 transition-colors">About</a>
+        </div>
+        <button @click="open = !open" class="md:hidden p-2 -mr-2 text-slate-500 hover:text-slate-900" aria-label="Toggle menu">
+          <svg x-show="!open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg x-show="open" x-cloak class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div x-show="open" x-transition x-cloak class="md:hidden pb-4 space-y-1 border-t border-slate-100 pt-3">
+        <a href="/work.html" class="block py-2 text-sm font-semibold text-slate-900">Work</a>
+        <a href="/projects.html" class="block py-2 text-sm text-slate-600 hover:text-slate-900">Projects</a>
+        <a href="/blog.html" class="block py-2 text-sm text-slate-600 hover:text-slate-900">Blog</a>
+        <a href="/about.html" class="block py-2 text-sm text-slate-600 hover:text-slate-900">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-3xl mx-auto px-6">
+
+    <!-- BREADCRUMB -->
+    <div class="pt-8 pb-4">
+      <a href="/work.html" class="text-sm text-slate-400 hover:text-slate-600 transition-colors">&larr; All case studies</a>
+    </div>
+
+    <!-- HEADER -->
+    <header class="pb-10 border-b border-slate-100">
+      <p class="text-xs font-medium text-slate-400 uppercase tracking-wider mb-3">Case Study</p>
+      <h1 class="text-3xl md:text-4xl font-bold text-slate-900 leading-tight">Commerce Platform: Billing &amp; Checkout</h1>
+      <p class="mt-4 text-lg text-slate-500">Building the end-to-end billing and checkout journey for Atlassian's cloud platform from 0&rarr;1.</p>
+      <div class="mt-6 flex flex-wrap gap-2">
+        <span class="text-xs px-2.5 py-1 bg-slate-100 text-slate-600 rounded-full">B2B SaaS</span>
+        <span class="text-xs px-2.5 py-1 bg-slate-100 text-slate-600 rounded-full">Commerce</span>
+        <span class="text-xs px-2.5 py-1 bg-slate-100 text-slate-600 rounded-full">Microservices</span>
+        <span class="text-xs px-2.5 py-1 bg-slate-100 text-slate-600 rounded-full">Cloud</span>
+      </div>
+    </header>
+
+    <!-- ARTICLE -->
+    <article id="article" class="prose max-w-none py-12">
+
+      <!-- Quick metrics banner -->
+      <div class="not-prose grid grid-cols-3 gap-4 p-6 bg-slate-50 rounded-xl mb-10">
+        <div class="text-center">
+          <p class="text-2xl font-bold text-slate-900">$1B</p>
+          <p class="text-xs text-slate-500 mt-1">ARR</p>
+        </div>
+        <div class="text-center">
+          <p class="text-2xl font-bold text-slate-900">+9%</p>
+          <p class="text-xs text-slate-500 mt-1">SEQ improvement</p>
+        </div>
+        <div class="text-center">
+          <p class="text-2xl font-bold text-slate-900">200K+</p>
+          <p class="text-xs text-slate-500 mt-1">Customers migrated</p>
+        </div>
+      </div>
+
+      <h2>Context</h2>
+      <p>
+        Atlassian was migrating its product suite to cloud. The existing billing infrastructure was monolithic and couldn't support the complexity of 15+ products, 500+ Marketplace apps, multiple pricing models, and enterprise purchasing workflows. A new commerce platform needed to be built from scratch.
+      </p>
+
+      <h2>Problem</h2>
+      <ul>
+        <li>Legacy billing system couldn't handle diverse pricing models (per-seat, usage-based, tiered)</li>
+        <li>200K+ customers and products needed migration to the new cloud platform</li>
+        <li>Enterprise and SMB billing UX was overly complex, leading to high support contacts</li>
+        <li>No unified checkout experience across Atlassian products and Marketplace apps</li>
+        <li>In-product purchase, upgrade, and reactivation flows had significant friction</li>
+      </ul>
+
+      <h2>My Role</h2>
+      <p>
+        Built and led the end-to-end billing and checkout journey. Defined product strategy through impact analysis, user research, and competitive insights. Aligned engineering, design, finance, and GTM teams on a 4-quarter roadmap and success metrics.
+      </p>
+
+      <h2>Decisions &amp; Trade-offs</h2>
+
+      <h3>Microservices from day one</h3>
+      <p>
+        Launched core microservices (subscriptions, usage, quotes, payments) from 0&rarr;1 rather than extending the monolith. Higher upfront investment but necessary for scaling to diverse billing needs across 15+ products.
+      </p>
+
+      <h3>Data-driven UX simplification</h3>
+      <p>
+        Simplified enterprise &amp; SMB billing UX through data analysis rather than redesigning from scratch. Focused on reducing time on top tasks and eliminating unnecessary steps.
+      </p>
+
+      <h3>Growth experiments in billing</h3>
+      <p>
+        Ran growth experiments for in-product purchases, upgrades, and reactivations &mdash; treating billing as a growth lever, not just infrastructure.
+      </p>
+
+      <h3>4-quarter migration roadmap</h3>
+      <p>
+        Defined migration strategy for 200K+ customers using impact analysis and user research rather than a big-bang approach. Phased rollout reduced risk.
+      </p>
+
+      <h2>Metrics &amp; Results</h2>
+      <ul>
+        <li><strong>$1B ARR</strong> processed through the new platform</li>
+        <li><strong>+9% SEQ</strong> (Satisfaction with Experience Quality) improvement</li>
+        <li><strong>-20% time on top billing tasks</strong></li>
+        <li><strong>-15% support contacts</strong> related to billing</li>
+        <li><strong>+3% first full purchase growth</strong></li>
+        <li><strong>-4% churn</strong> from reactivation experiments</li>
+        <li><strong>15% reduction in launch time</strong> through GTM optimization</li>
+        <li><strong>200K+ customers</strong> successfully migrated</li>
+      </ul>
+
+      <h2>Links</h2>
+      <div class="not-prose flex gap-4">
+        <a href="#" class="inline-flex items-center gap-1.5 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors border border-slate-200 px-4 py-2 rounded-lg">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+          Live Demo
+        </a>
+        <a href="#" class="inline-flex items-center gap-1.5 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors border border-slate-200 px-4 py-2 rounded-lg">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          GitHub
+        </a>
+      </div>
+
+      <h2>Learnings</h2>
+      <ul>
+        <li><strong>Billing is a growth surface.</strong> Most companies treat billing as back-office infrastructure. We treated it as a product surface &mdash; optimizing checkout flows directly impacted revenue growth and churn reduction.</li>
+        <li><strong>Migration is a product problem, not just an engineering problem.</strong> Migrating 200K+ customers required product thinking: impact analysis, user segmentation, phased rollout, and success metrics &mdash; not just data migration scripts.</li>
+        <li><strong>KPI-based leadership updates drive alignment.</strong> Drove org-wide alignment through KPI-based leadership updates. Making goals and impact visible across teams was as important as the technical execution.</li>
+        <li><strong>Simplification beats feature addition.</strong> The biggest wins came from removing steps and reducing complexity, not adding features. -20% time on tasks came from subtraction, not addition.</li>
+      </ul>
+
+    </article>
+
+    <!-- NEXT/PREV -->
+    <div class="border-t border-slate-100 py-10 flex justify-between">
+      <a href="/work/marketplace-ai-growth.html" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">
+        &larr; Prev: Marketplace AI-Powered Growth
+      </a>
+      <a href="/work/enterprise-licensing.html" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">
+        Next: Enterprise Licensing for Marketplace &rarr;
+      </a>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-200">
+    <div class="max-w-5xl mx-auto px-6 py-10">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-sm text-slate-400">&copy; 2026 Ekta Sengar. All rights reserved.</p>
+        <div class="flex gap-6 text-sm text-slate-400">
+          <a href="https://github.com/ektasengar" class="hover:text-slate-700 transition-colors">GitHub</a>
+          <a href="https://linkedin.com/in/ektasengar" class="hover:text-slate-700 transition-colors">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

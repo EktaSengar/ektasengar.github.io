@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Building AI Products That Actually Ship — Ekta Sengar</title>
+  <meta name="description" content="Why most AI product initiatives stall, and a framework for getting from prototype to production.">
+  <meta property="og:title" content="Building AI Products That Actually Ship">
+  <meta property="og:description" content="Why most AI product initiatives stall, and a framework for getting from prototype to production.">
+  <meta property="og:type" content="article">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="/css/custom.css">
+</head>
+<body class="font-sans text-slate-600 bg-white antialiased">
+
+  <!-- NAV -->
+  <nav x-data="{ open: false }" class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="text-lg font-semibold text-slate-900 tracking-tight">Ekta Sengar</a>
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+          <a href="/work.html" class="text-slate-500 hover:text-slate-900 transition-colors">Work</a>
+          <a href="/projects.html" class="text-slate-500 hover:text-slate-900 transition-colors">Projects</a>
+          <a href="/blog.html" class="text-slate-900 font-semibold">Blog</a>
+          <a href="/about.html" class="text-slate-500 hover:text-slate-900 transition-colors">About</a>
+        </div>
+        <button @click="open = !open" class="md:hidden p-2 -mr-2 text-slate-500 hover:text-slate-900" aria-label="Toggle menu">
+          <svg x-show="!open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg x-show="open" x-cloak class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div x-show="open" x-transition x-cloak class="md:hidden pb-4 space-y-1 border-t border-slate-100 pt-3">
+        <a href="/work.html" class="block py-2 text-sm text-slate-600 hover:text-slate-900">Work</a>
+        <a href="/projects.html" class="block py-2 text-sm text-slate-600 hover:text-slate-900">Projects</a>
+        <a href="/blog.html" class="block py-2 text-sm font-semibold text-slate-900">Blog</a>
+        <a href="/about.html" class="block py-2 text-sm text-slate-600 hover:text-slate-900">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-3xl mx-auto px-6">
+
+    <!-- BREADCRUMB -->
+    <div class="pt-8 pb-4">
+      <a href="/blog.html" class="text-sm text-slate-400 hover:text-slate-600 transition-colors">&larr; All posts</a>
+    </div>
+
+    <!-- HEADER -->
+    <header class="pb-8 border-b border-slate-100">
+      <div class="flex items-center gap-3 text-xs text-slate-400 mb-4">
+        <time>Jan 15, 2026</time>
+        <span>&middot;</span>
+        <span data-reading-time="#article">7 min read</span>
+        <span>&middot;</span>
+        <span class="px-2 py-0.5 bg-slate-100 rounded-full">AI</span>
+      </div>
+      <h1 class="text-3xl md:text-4xl font-bold text-slate-900 leading-tight">Building AI Products That Actually Ship</h1>
+      <p class="mt-4 text-lg text-slate-500">Why most AI product initiatives stall, and a framework for getting from prototype to production.</p>
+    </header>
+
+    <!-- ARTICLE -->
+    <article id="article" class="prose max-w-none py-12">
+
+      <p>
+        There's a pattern I've seen play out at multiple companies: the AI team builds an impressive demo, leadership gets excited, resources get allocated, and then... nothing ships. Six months later the project is quietly shelved, and the team moves on to the next shiny thing.
+      </p>
+      <p>
+        After shipping several AI-powered features to production (and watching a few die in demo-land), I've developed a framework for thinking about what separates AI products that ship from those that don't.
+      </p>
+
+      <h2>The demo-to-production gap</h2>
+      <p>
+        The core issue is that AI demos and AI products have almost nothing in common. A demo needs to work on 5 cherry-picked examples. A product needs to work on millions of diverse, messy, real-world inputs. This gap is not a small engineering problem — it's a fundamental product and business problem.
+      </p>
+      <p>
+        The demo-to-production gap manifests in three ways:
+      </p>
+      <ul>
+        <li><strong>Accuracy gap:</strong> 95% accuracy on a clean test set becomes 70% on production data with noise, edge cases, and distribution shifts</li>
+        <li><strong>Latency gap:</strong> A model that takes 3 seconds per inference is fine in a notebook but unacceptable in a real-time UI</li>
+        <li><strong>Reliability gap:</strong> What happens when the model is wrong? Who catches it? What's the fallback?</li>
+      </ul>
+
+      <h2>A framework for AI product readiness</h2>
+      <p>
+        Before committing to building an AI feature, I evaluate it against four dimensions:
+      </p>
+
+      <h3>1. Error tolerance</h3>
+      <p>
+        How bad is a wrong answer? For document classification, a misclassification means a document ends up in the wrong folder — annoying but recoverable. For medical diagnosis, a wrong answer could be life-threatening. The higher the error cost, the higher the accuracy bar, and the more important human-in-the-loop becomes.
+      </p>
+      <p>
+        The best AI products to ship first are the ones where errors are cheap to fix and the value of a correct answer is high. Search relevance is a great example: a bad result just means the user refines their query.
+      </p>
+
+      <h3>2. Human-in-the-loop design</h3>
+      <p>
+        Every AI product should have a clear answer to: "What happens when the model is wrong?" The best AI products don't try to replace human judgment — they augment it. They present AI outputs as suggestions, surface confidence levels, and make it easy for users to correct mistakes.
+      </p>
+      <p>
+        Concretely, this means designing for three states: high confidence (auto-action), medium confidence (suggestion with one-click accept), and low confidence (flag for human review). Most teams only design for the first state.
+      </p>
+
+      <h3>3. Data flywheel potential</h3>
+      <p>
+        The best AI products get better as more users interact with them. Corrections become training data. Usage patterns inform ranking signals. This flywheel is what makes AI products defensible over time — not the model architecture itself.
+      </p>
+      <p>
+        Before building, ask: does this feature have a natural feedback mechanism? Can we capture implicit signals (clicks, ignores, edits) or do we need explicit feedback (thumbs up/down)? Implicit is always better because it doesn't require user effort.
+      </p>
+
+      <h3>4. Incremental value path</h3>
+      <p>
+        Can you ship a simpler, less "AI" version first and layer in intelligence over time? The best AI products start with rules, graduate to simple models, and eventually reach deep learning — each step providing incremental value.
+      </p>
+      <p>
+        A common mistake is jumping straight to the most sophisticated approach. Start with keyword matching before vector search. Start with rules-based classification before ML classification. Each step validates the product hypothesis and builds the data foundation for the next.
+      </p>
+
+      <h2>The shipping framework in practice</h2>
+      <p>
+        When evaluating a new AI feature initiative, I score it 1–5 on each dimension:
+      </p>
+      <ul>
+        <li><strong>Error tolerance:</strong> 5 = errors are cheap and recoverable, 1 = errors are catastrophic</li>
+        <li><strong>HITL design:</strong> 5 = clear augmentation model, 1 = trying to fully automate</li>
+        <li><strong>Data flywheel:</strong> 5 = strong natural feedback loop, 1 = no feedback mechanism</li>
+        <li><strong>Incremental path:</strong> 5 = clear stepping stones, 1 = all-or-nothing</li>
+      </ul>
+      <p>
+        Features that score 16+ tend to ship successfully. Features scoring below 10 rarely make it out of the demo phase. This isn't a rigid rule — it's a conversation tool that helps teams think clearly about the risks before committing resources.
+      </p>
+
+      <h2>Common failure modes</h2>
+      <p>
+        Beyond the readiness framework, there are several recurring patterns I've seen kill AI product initiatives:
+      </p>
+      <ul>
+        <li><strong>Solving for the algorithm, not the user.</strong> The team optimizes for model metrics (F1 score, perplexity) rather than user outcomes (task completion, time saved). These are correlated but not the same thing.</li>
+        <li><strong>Skipping the "boring" product work.</strong> Error handling, loading states, edge cases, onboarding — these unglamorous features make or break the user experience of an AI product.</li>
+        <li><strong>No clear success metric.</strong> "We'll know it's good when users like it" is not a launch criterion. Define quantitative success criteria before writing code.</li>
+        <li><strong>Underestimating operational complexity.</strong> AI products need monitoring, retraining pipelines, data quality checks, and model versioning. These operational costs are easy to ignore in the planning phase.</li>
+      </ul>
+
+      <h2>The bottom line</h2>
+      <p>
+        AI products that ship are not the most technically impressive. They're the ones where the product team has honestly assessed the gap between demo performance and production requirements, designed for human-in-the-loop from day one, and built an incremental path from simple to sophisticated.
+      </p>
+      <p>
+        The bar for shipping AI is lower than most teams think — you don't need GPT-5 to deliver real value. But the bar for doing it well is higher than most teams expect, because the product and UX work around the AI matters at least as much as the model itself.
+      </p>
+
+    </article>
+
+    <!-- POST FOOTER -->
+    <div class="border-t border-slate-100 py-10">
+      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+        <div>
+          <p class="text-sm text-slate-500">Thanks for reading. If this resonated, you might also enjoy:</p>
+          <a href="/blog/saas-metrics.html" class="text-sm font-medium text-slate-700 hover:text-blue-600 transition-colors">
+            The B2B SaaS Metrics That Actually Matter &rarr;
+          </a>
+        </div>
+        <a href="/blog.html" class="text-sm text-slate-400 hover:text-slate-600 transition-colors">All posts</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-200">
+    <div class="max-w-5xl mx-auto px-6 py-10">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-sm text-slate-400">&copy; 2026 Ekta Sengar. All rights reserved.</p>
+        <div class="flex gap-6 text-sm text-slate-400">
+          <a href="https://github.com/ektasengar" class="hover:text-slate-700 transition-colors">GitHub</a>
+          <a href="https://linkedin.com/in/ektasengar" class="hover:text-slate-700 transition-colors">LinkedIn</a>
+
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+[
+  {
+    "name": "AI Partner Insights Tracker",
+    "description": "AI-powered tool built with Replit agents to analyze multi-source feedback (surveys, partner interviews, community forums, support tickets). Improved PSAT by 8% and accelerated roadmap prioritization at Atlassian.",
+    "tags": ["AI", "B2B SaaS", "Analytics"],
+    "demo": null,
+    "github": "https://github.com/ektasengar"
+  },
+  {
+    "name": "PM Workflow AI Agents",
+    "description": "Suite of 5 AI agents for product management workflows using Vercel v0, Replit, Figma Make, and GPT-4/5. Enabled 20+ PMs to prototype rapid iterations, reducing time-to-market by 15%.",
+    "tags": ["AI", "Productivity", "LLM"],
+    "demo": null,
+    "github": "https://github.com/ektasengar"
+  },
+  {
+    "name": "Marketplace Recommendation Engine",
+    "description": "ML-driven recommendation and personalization system for Atlassian's $6B+ Marketplace. Ran 5 AI experiments across discovery, sponsored ads, and funnel optimization driving +3.7% conversion.",
+    "tags": ["ML", "B2B SaaS", "Growth"],
+    "demo": null,
+    "github": "https://github.com/ektasengar"
+  },
+  {
+    "name": "Billing Microservices Platform",
+    "description": "End-to-end billing and checkout microservices (subscriptions, usage, quotes, payments) for Atlassian's cloud platform. Scaled to $1B ARR across 15+ products and 500+ Marketplace apps.",
+    "tags": ["Backend", "B2B SaaS", "Microservices"],
+    "demo": null,
+    "github": "https://github.com/ektasengar"
+  },
+  {
+    "name": "Enterprise Licensing Framework",
+    "description": "Enterprise licensing system for Atlassian Marketplace apps. Enabled $15M+ ACV with clients like PwC, Citi, Ford, Honeywell, and Accenture, unlocking 600K+ enterprise seats.",
+    "tags": ["B2B SaaS", "Enterprise", "Growth"],
+    "demo": null,
+    "github": "https://github.com/ektasengar"
+  },
+  {
+    "name": "Growth Experiment Framework",
+    "description": "A/B testing and growth experiment framework for in-product purchases, upgrades, and reactivations. Achieved +3% first purchase growth and -4% churn across Atlassian commerce flows.",
+    "tags": ["Growth", "Analytics", "B2B SaaS"],
+    "demo": null,
+    "github": "https://github.com/ektasengar"
+  },
+  {
+    "name": "Foospot Smart Parking Platform",
+    "description": "IoT/NFC-powered smart parking platform (co-founder). Reduced parking costs by 7.5x, served 6K+ customers/quarter. Launched at AutoExpo'16 and scaled across public and private lots.",
+    "tags": ["IoT", "Startup", "Full Stack"],
+    "demo": null,
+    "github": "https://github.com/ektasengar"
+  },
+  {
+    "name": "Jobbie — AI Job Search Platform",
+    "description": "AI-powered job search platform using RAG for intelligent matching. Aggregates listings from 9 sources (Greenhouse, Lever, Ashby, etc.), features NLP search, resume-based matching, and an AI career assistant. Built with React, Node.js, PostgreSQL, and vector search.",
+    "tags": ["AI", "Full Stack", "LLM", "RAG"],
+    "demo": null,
+    "github": "https://github.com/ektasengar"
+  },
+  {
+    "name": "IC Reliability Infrastructure",
+    "description": "Reliability infrastructure for Intel's $1B+ IoT and chip design portfolio. Standardized adoption across teams, saving ~$1M. Received AHM Star Award (top 0.5% of org).",
+    "tags": ["Systems", "Hardware", "Backend"],
+    "demo": null,
+    "github": "https://github.com/ektasengar"
+  }
+]
