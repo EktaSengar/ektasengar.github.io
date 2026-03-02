@@ -21,6 +21,9 @@
       }
     }
   </script>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
   <link rel="stylesheet" href="/css/custom.css">
 </head>
 <body class="font-sans text-slate-600 bg-white antialiased">
@@ -108,8 +111,13 @@
       </div>
 
       <!-- Empty state -->
-      <div x-show="filteredProjects.length === 0" class="text-center py-16">
+      <div x-show="filteredProjects.length === 0 && !loadError" class="text-center py-16">
         <p class="text-slate-400">No projects match this filter.</p>
+      </div>
+
+      <!-- Error state -->
+      <div x-show="loadError" class="text-center py-16">
+        <p class="text-slate-400">Unable to load projects. Please try refreshing the page.</p>
       </div>
     </section>
 
@@ -123,7 +131,8 @@
         <div class="flex gap-6 text-sm text-slate-400">
           <a href="https://github.com/ektasengar" class="hover:text-slate-700 transition-colors">GitHub</a>
           <a href="https://linkedin.com/in/ektasengar" class="hover:text-slate-700 transition-colors">LinkedIn</a>
-
+          <a href="https://medium.com/@ekta-sengar" class="hover:text-slate-700 transition-colors">Medium</a>
+          <a href="mailto:sengar.ekta@gmail.com" class="hover:text-slate-700 transition-colors">Email</a>
         </div>
       </div>
     </div>
@@ -145,12 +154,15 @@
         },
         async init() {
           try {
-            const res = await fetch('/data/projects.json');
+            const res = await fetch('data/projects.json');
+            if (!res.ok) throw new Error(`HTTP ${res.status}`);
             this.projects = await res.json();
           } catch (e) {
             console.error('Failed to load projects:', e);
+            this.loadError = true;
           }
-        }
+        },
+        loadError: false
       };
     }
   </script>
