@@ -53,7 +53,7 @@
     </div>
   </nav>
 
-  <main class="max-w-3xl mx-auto px-6" x-data="mediumApp()" x-init="init()">
+  <main class="max-w-5xl mx-auto px-6" x-data="mediumApp()" x-init="init()">
 
     <!-- HEADER -->
     <section class="pt-20 pb-12">
@@ -120,11 +120,11 @@
       </div>
       <div class="space-y-2">
         <template x-for="article in articles" :key="article.url">
-          <a :href="article.url" target="_blank" rel="noopener" class="group block py-6 border-b border-slate-100 hover:bg-slate-50 -mx-4 px-4 rounded-lg transition-colors">
+          <a :href="article.url" target="_blank" rel="noopener" class="group block py-6 border-b border-slate-100 border-l-2 border-l-slate-200 hover:bg-slate-50 -mx-4 px-4 pl-5 rounded-lg transition-colors">
             <div class="flex items-center gap-3 text-xs text-slate-400 mb-2">
               <time x-text="article.date"></time>
               <span>&middot;</span>
-              <span x-text="article.readTime"></span>
+              <span class="font-mono" x-text="article.readTime"></span>
               <span>&middot;</span>
               <span class="text-xs px-2 py-0.5 bg-slate-100 rounded-full" x-text="article.tag"></span>
               <svg class="w-3.5 h-3.5 ml-auto text-slate-300 group-hover:text-slate-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
