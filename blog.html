@@ -155,19 +155,22 @@
       <div class="divide-y divide-slate-100">
         <template x-for="article in articles" :key="article.url">
           <a :href="article.url" target="_blank" rel="noopener" class="group block py-5 hover:bg-slate-50/50 -mx-4 px-4 rounded-lg transition-colors">
-            <div class="md:flex md:items-start md:gap-8">
-              <div class="flex-1">
+            <div class="flex items-start gap-4 md:gap-6">
+              <!-- Thumbnail -->
+              <div x-show="article.thumbnail" class="hidden sm:block shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-lg overflow-hidden bg-slate-100">
+                <img :src="article.thumbnail" :alt="article.title" class="w-full h-full object-cover" loading="lazy">
+              </div>
+              <div class="flex-1 min-w-0">
                 <div class="flex items-center gap-3 text-xs text-slate-400 mb-1.5">
                   <time x-text="article.date" class="font-mono"></time>
                   <span>&middot;</span>
                   <span class="font-mono" x-text="article.readTime"></span>
+                  <span>&middot;</span>
+                  <span class="text-[10px] font-mono px-2 py-0.5 border border-slate-200 text-slate-400 rounded" x-text="article.tag"></span>
+                  <svg class="w-3.5 h-3.5 ml-auto text-slate-300 group-hover:text-slate-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
                 </div>
                 <h3 class="text-sm font-semibold text-slate-900 group-hover:text-blue-600 transition-colors" x-text="article.title"></h3>
-                <p class="mt-1 text-sm text-slate-400 leading-relaxed" x-text="article.description"></p>
-              </div>
-              <div class="mt-2 md:mt-0 flex items-center gap-2 shrink-0">
-                <span class="text-[10px] font-mono px-2 py-0.5 border border-slate-200 text-slate-400 rounded" x-text="article.tag"></span>
-                <svg class="w-3.5 h-3.5 text-slate-300 group-hover:text-slate-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                <p class="mt-1 text-sm text-slate-400 leading-relaxed line-clamp-2" x-text="article.description"></p>
               </div>
             </div>
           </a>

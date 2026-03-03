@@ -85,6 +85,12 @@ function truncate(str, max = 150) {
   return (lastSpace > 0 ? trimmed.slice(0, lastSpace) : trimmed) + '…';
 }
 
+/** Extract the first image URL from HTML content (Medium embeds images in content:encoded) */
+function extractThumbnail(html = '') {
+  const match = html.match(/<img[^>]+src="([^"]+)"/);
+  return match ? match[1] : null;
+}
+
 // ── Main ───────────────────────────────────────────────────
 
 async function main() {
@@ -111,6 +117,8 @@ async function main() {
     const rawDescription = snippet || contentText;
     const description = truncate(rawDescription);
 
+    const thumbnail = extractThumbnail(item.contentEncoded || item.content || '');
+
     return {
       title: (item.title || '').trim(),
       url: cleanUrl(item.link || ''),
@@ -118,6 +126,7 @@ async function main() {
       readTime: estimateReadTime(item.contentEncoded || item.content || item.description || ''),
       tag,
       description,
+      ...(thumbnail && { thumbnail }),
     };
   });
 
