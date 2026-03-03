@@ -65,11 +65,12 @@
     <!-- POSTS LIST -->
     <section class="pb-20 space-y-2">
 
-      <a href="/blog/building-ai-products.html" class="group block py-6 border-b border-slate-100 hover:bg-slate-50 -mx-4 px-4 rounded-lg transition-colors">
+      <a href="/blog/building-ai-products.html" class="group block py-6 border-b border-slate-100 border-l-2 border-l-emerald-300 hover:bg-slate-50 -mx-4 px-4 pl-5 rounded-lg transition-colors">
         <div class="flex items-center gap-3 text-xs text-slate-400 mb-2">
+          <span class="text-[10px] font-mono text-slate-300">01</span>
           <time>Jan 15, 2026</time>
           <span>&middot;</span>
-          <span>7 min read</span>
+          <span class="font-mono">7 min read</span>
           <span>&middot;</span>
           <span class="text-xs px-2 py-0.5 bg-slate-100 rounded-full">AI</span>
         </div>
@@ -77,11 +78,12 @@
         <p class="mt-1 text-sm text-slate-500 leading-relaxed">Why most AI product initiatives stall, and a framework for getting from prototype to production.</p>
       </a>
 
-      <a href="/blog/saas-metrics.html" class="group block py-6 border-b border-slate-100 hover:bg-slate-50 -mx-4 px-4 rounded-lg transition-colors">
+      <a href="/blog/saas-metrics.html" class="group block py-6 border-b border-slate-100 border-l-2 border-l-blue-300 hover:bg-slate-50 -mx-4 px-4 pl-5 rounded-lg transition-colors">
         <div class="flex items-center gap-3 text-xs text-slate-400 mb-2">
+          <span class="text-[10px] font-mono text-slate-300">02</span>
           <time>Dec 8, 2025</time>
           <span>&middot;</span>
-          <span>6 min read</span>
+          <span class="font-mono">6 min read</span>
           <span>&middot;</span>
           <span class="text-xs px-2 py-0.5 bg-slate-100 rounded-full">B2B SaaS</span>
         </div>
@@ -89,11 +91,12 @@
         <p class="mt-1 text-sm text-slate-500 leading-relaxed">Beyond vanity metrics: a framework for choosing the indicators that drive real business outcomes.</p>
       </a>
 
-      <a href="/blog/engineer-to-pm.html" class="group block py-6 border-b border-slate-100 hover:bg-slate-50 -mx-4 px-4 rounded-lg transition-colors">
+      <a href="/blog/engineer-to-pm.html" class="group block py-6 border-b border-slate-100 border-l-2 border-l-amber-300 hover:bg-slate-50 -mx-4 px-4 pl-5 rounded-lg transition-colors">
         <div class="flex items-center gap-3 text-xs text-slate-400 mb-2">
+          <span class="text-[10px] font-mono text-slate-300">03</span>
           <time>Nov 20, 2025</time>
           <span>&middot;</span>
-          <span>8 min read</span>
+          <span class="font-mono">8 min read</span>
           <span>&middot;</span>
           <span class="text-xs px-2 py-0.5 bg-slate-100 rounded-full">Career</span>
         </div>
@@ -103,11 +106,16 @@
 
     </section>
 
+    <!-- SECTION DIVIDER -->
+    <div class="flex items-center gap-4 py-2 mb-8" x-show="articles.length > 0">
+      <div class="flex-1 border-t border-slate-100"></div>
+      <span class="text-[10px] font-mono text-slate-300 uppercase tracking-wider shrink-0">// from medium</span>
+      <div class="flex-1 border-t border-slate-100"></div>
+    </div>
+
     <!-- FROM MEDIUM — loaded from data/medium.json -->
     <section class="pb-20" x-show="articles.length > 0">
-      <div class="flex items-center gap-3 mb-6 pt-4">
-        <svg class="w-5 h-5 text-slate-400" viewBox="0 0 24 24" fill="currentColor"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zm7.42 0c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42zm2.04 0c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75c.66 0 1.19 2.58 1.19 5.75z"/></svg>
-        <h2 class="text-lg font-semibold text-slate-900">From Medium</h2>
+      <div class="flex items-center gap-3 mb-6">
         <a href="https://medium.com/@ekta-sengar" target="_blank" rel="noopener" class="text-xs text-slate-400 hover:text-slate-600 transition-colors ml-auto">View all on Medium &rarr;</a>
       </div>
       <div class="space-y-2">
