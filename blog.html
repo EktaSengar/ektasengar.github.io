@@ -55,82 +55,146 @@
 
   <main class="max-w-5xl mx-auto px-6" x-data="mediumApp()" x-init="init()">
 
-    <!-- HEADER -->
-    <section class="pt-20 pb-12">
+    <!-- HEADER — Stronger intro: states what this blog is about and who it's for -->
+    <section class="pt-20 pb-16">
       <p class="text-sm font-medium text-slate-400 uppercase tracking-wider mb-4">Blog</p>
-      <h1 class="text-3xl md:text-4xl font-bold text-slate-900">Writing about product, AI, and B2B SaaS.</h1>
-      <p class="mt-4 text-lg text-slate-500">Long-form thinking on building technology products. Mostly 5&ndash;8 minute reads.</p>
+      <h1 class="text-3xl md:text-4xl font-bold text-slate-900 max-w-3xl">Writing about product, AI, and B2B SaaS.</h1>
+      <p class="mt-4 text-lg text-slate-500 max-w-3xl">Frameworks, trade-offs, and lessons from shipping AI products at scale. Not theory &mdash; lived experience.</p>
+      <!-- Topic tags — gives hiring managers instant scan of coverage areas -->
+      <div class="mt-6 flex flex-wrap gap-2">
+        <span class="text-xs font-mono px-3 py-1.5 border border-slate-200 text-slate-500 rounded-full">AI / ML</span>
+        <span class="text-xs font-mono px-3 py-1.5 border border-slate-200 text-slate-500 rounded-full">B2B SaaS</span>
+        <span class="text-xs font-mono px-3 py-1.5 border border-slate-200 text-slate-500 rounded-full">Product Strategy</span>
+        <span class="text-xs font-mono px-3 py-1.5 border border-slate-200 text-slate-500 rounded-full">Career</span>
+        <span class="text-xs font-mono px-3 py-1.5 border border-slate-200 text-slate-500 rounded-full">Systems Thinking</span>
+      </div>
     </section>
 
-    <!-- POSTS LIST -->
-    <section class="pb-20 space-y-2">
-
-      <a href="/blog/building-ai-products.html" class="group block py-6 border-b border-slate-100 border-l-2 border-l-emerald-300 hover:bg-slate-50 -mx-4 px-4 pl-5 rounded-lg transition-colors">
-        <div class="flex items-center gap-3 text-xs text-slate-400 mb-2">
-          <span class="text-[10px] font-mono text-slate-300">01</span>
-          <time>Jan 15, 2026</time>
-          <span>&middot;</span>
-          <span class="font-mono">7 min read</span>
-          <span>&middot;</span>
-          <span class="text-xs px-2 py-0.5 bg-slate-100 rounded-full">AI</span>
+    <!-- FEATURED POST — First post gets a larger, more prominent card treatment.
+         Signals to the reader: "start here." Hiring managers see the strongest piece first. -->
+    <section class="pb-12">
+      <p class="text-[10px] font-mono text-slate-400 uppercase tracking-wider mb-4">// featured</p>
+      <a href="/blog/building-ai-products.html" class="group block p-6 md:p-8 border border-slate-200 rounded-xl hover:border-slate-300 transition-colors">
+        <div class="md:flex md:items-start md:justify-between md:gap-8">
+          <div class="flex-1">
+            <div class="flex items-center gap-3 text-xs text-slate-400 mb-3">
+              <time>Jan 15, 2026</time>
+              <span>&middot;</span>
+              <span class="font-mono">7 min read</span>
+            </div>
+            <h2 class="text-xl md:text-2xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">Building AI Products That Actually Ship</h2>
+            <p class="mt-3 text-sm text-slate-500 leading-relaxed max-w-2xl">Why most AI product initiatives stall, and a framework for getting from prototype to production. Covers prioritization, infra trade-offs, and the role of PMs in AI-native teams.</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="text-xs px-2.5 py-1 bg-slate-100 text-slate-600 rounded-full">AI</span>
+              <span class="text-xs px-2.5 py-1 bg-slate-100 text-slate-600 rounded-full">Product Strategy</span>
+              <span class="text-xs px-2.5 py-1 bg-slate-100 text-slate-600 rounded-full">Shipping</span>
+            </div>
+          </div>
+          <!-- Right side: read CTA — gives the card a clear action endpoint -->
+          <div class="hidden md:flex md:flex-col md:items-end md:justify-center shrink-0 mt-4 md:mt-0">
+            <span class="text-sm font-medium text-slate-400 group-hover:text-blue-600 transition-colors">Read &rarr;</span>
+          </div>
         </div>
-        <h2 class="text-lg font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">Building AI Products That Actually Ship</h2>
-        <p class="mt-1 text-sm text-slate-500 leading-relaxed">Why most AI product initiatives stall, and a framework for getting from prototype to production.</p>
       </a>
-
-      <a href="/blog/saas-metrics.html" class="group block py-6 border-b border-slate-100 border-l-2 border-l-blue-300 hover:bg-slate-50 -mx-4 px-4 pl-5 rounded-lg transition-colors">
-        <div class="flex items-center gap-3 text-xs text-slate-400 mb-2">
-          <span class="text-[10px] font-mono text-slate-300">02</span>
-          <time>Dec 8, 2025</time>
-          <span>&middot;</span>
-          <span class="font-mono">6 min read</span>
-          <span>&middot;</span>
-          <span class="text-xs px-2 py-0.5 bg-slate-100 rounded-full">B2B SaaS</span>
-        </div>
-        <h2 class="text-lg font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">The B2B SaaS Metrics That Actually Matter</h2>
-        <p class="mt-1 text-sm text-slate-500 leading-relaxed">Beyond vanity metrics: a framework for choosing the indicators that drive real business outcomes.</p>
-      </a>
-
-      <a href="/blog/engineer-to-pm.html" class="group block py-6 border-b border-slate-100 border-l-2 border-l-amber-300 hover:bg-slate-50 -mx-4 px-4 pl-5 rounded-lg transition-colors">
-        <div class="flex items-center gap-3 text-xs text-slate-400 mb-2">
-          <span class="text-[10px] font-mono text-slate-300">03</span>
-          <time>Nov 20, 2025</time>
-          <span>&middot;</span>
-          <span class="font-mono">8 min read</span>
-          <span>&middot;</span>
-          <span class="text-xs px-2 py-0.5 bg-slate-100 rounded-full">Career</span>
-        </div>
-        <h2 class="text-lg font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">From Engineer to Product Manager: What Nobody Tells You</h2>
-        <p class="mt-1 text-sm text-slate-500 leading-relaxed">The mindset shifts, skill gaps, and hard-won lessons from switching from building to deciding what to build.</p>
-      </a>
-
     </section>
 
-    <!-- SECTION DIVIDER -->
+    <!-- ALL POSTS — Clean list with consistent structure.
+         Each post: metadata row (date · read time) → title → excerpt → tags.
+         The border-l accent gives scannable visual rhythm without being heavy. -->
+    <section class="pb-16">
+      <p class="text-[10px] font-mono text-slate-400 uppercase tracking-wider mb-6">// all posts</p>
+
+      <div class="divide-y divide-slate-100">
+
+        <a href="/blog/building-ai-products.html" class="group block py-6 hover:bg-slate-50/50 -mx-4 px-4 rounded-lg transition-colors">
+          <div class="md:flex md:items-start md:gap-8">
+            <div class="flex-1">
+              <div class="flex items-center gap-3 text-xs text-slate-400 mb-2">
+                <time class="font-mono">2026-01-15</time>
+                <span>&middot;</span>
+                <span class="font-mono">7 min</span>
+              </div>
+              <h3 class="text-base font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">Building AI Products That Actually Ship</h3>
+              <p class="mt-1 text-sm text-slate-500 leading-relaxed">Why most AI product initiatives stall, and a framework for getting from prototype to production.</p>
+            </div>
+            <div class="mt-2 md:mt-0 flex flex-wrap gap-2 shrink-0">
+              <span class="text-[10px] font-mono px-2 py-0.5 border border-slate-200 text-slate-400 rounded">AI</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 border border-slate-200 text-slate-400 rounded">Product Strategy</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="/blog/saas-metrics.html" class="group block py-6 hover:bg-slate-50/50 -mx-4 px-4 rounded-lg transition-colors">
+          <div class="md:flex md:items-start md:gap-8">
+            <div class="flex-1">
+              <div class="flex items-center gap-3 text-xs text-slate-400 mb-2">
+                <time class="font-mono">2025-12-08</time>
+                <span>&middot;</span>
+                <span class="font-mono">6 min</span>
+              </div>
+              <h3 class="text-base font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">The B2B SaaS Metrics That Actually Matter</h3>
+              <p class="mt-1 text-sm text-slate-500 leading-relaxed">Beyond vanity metrics: a framework for choosing the indicators that drive real business outcomes.</p>
+            </div>
+            <div class="mt-2 md:mt-0 flex flex-wrap gap-2 shrink-0">
+              <span class="text-[10px] font-mono px-2 py-0.5 border border-slate-200 text-slate-400 rounded">B2B SaaS</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 border border-slate-200 text-slate-400 rounded">Analytics</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="/blog/engineer-to-pm.html" class="group block py-6 hover:bg-slate-50/50 -mx-4 px-4 rounded-lg transition-colors">
+          <div class="md:flex md:items-start md:gap-8">
+            <div class="flex-1">
+              <div class="flex items-center gap-3 text-xs text-slate-400 mb-2">
+                <time class="font-mono">2025-11-20</time>
+                <span>&middot;</span>
+                <span class="font-mono">8 min</span>
+              </div>
+              <h3 class="text-base font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">From Engineer to Product Manager: What Nobody Tells You</h3>
+              <p class="mt-1 text-sm text-slate-500 leading-relaxed">The mindset shifts, skill gaps, and hard-won lessons from switching from building to deciding what to build.</p>
+            </div>
+            <div class="mt-2 md:mt-0 flex flex-wrap gap-2 shrink-0">
+              <span class="text-[10px] font-mono px-2 py-0.5 border border-slate-200 text-slate-400 rounded">Career</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 border border-slate-200 text-slate-400 rounded">Systems Thinking</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- SECTION DIVIDER — Codified separator consistent with projects page pattern -->
     <div class="flex items-center gap-4 py-2 mb-8" x-show="articles.length > 0">
       <div class="flex-1 border-t border-slate-100"></div>
       <span class="text-[10px] font-mono text-slate-300 uppercase tracking-wider shrink-0">// from medium</span>
       <div class="flex-1 border-t border-slate-100"></div>
     </div>
 
-    <!-- FROM MEDIUM — loaded from data/medium.json -->
+    <!-- FROM MEDIUM — Dynamic articles loaded from data/medium.json.
+         Styled consistently with the posts above but with external link indicator. -->
     <section class="pb-20" x-show="articles.length > 0">
-      <div class="flex items-center gap-3 mb-6">
-        <a href="https://medium.com/@ekta-sengar" target="_blank" rel="noopener" class="text-xs text-slate-400 hover:text-slate-600 transition-colors ml-auto">View all on Medium &rarr;</a>
+      <div class="flex items-center justify-between mb-6">
+        <span class="text-xs text-slate-400">Personal essays and reflections published on Medium.</span>
+        <a href="https://medium.com/@ekta-sengar" target="_blank" rel="noopener" class="text-xs font-medium text-slate-400 hover:text-slate-600 transition-colors shrink-0">View all on Medium &rarr;</a>
       </div>
-      <div class="space-y-2">
+      <div class="divide-y divide-slate-100">
         <template x-for="article in articles" :key="article.url">
-          <a :href="article.url" target="_blank" rel="noopener" class="group block py-6 border-b border-slate-100 border-l-2 border-l-slate-200 hover:bg-slate-50 -mx-4 px-4 pl-5 rounded-lg transition-colors">
-            <div class="flex items-center gap-3 text-xs text-slate-400 mb-2">
-              <time x-text="article.date"></time>
-              <span>&middot;</span>
-              <span class="font-mono" x-text="article.readTime"></span>
-              <span>&middot;</span>
-              <span class="text-xs px-2 py-0.5 bg-slate-100 rounded-full" x-text="article.tag"></span>
-              <svg class="w-3.5 h-3.5 ml-auto text-slate-300 group-hover:text-slate-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+          <a :href="article.url" target="_blank" rel="noopener" class="group block py-5 hover:bg-slate-50/50 -mx-4 px-4 rounded-lg transition-colors">
+            <div class="md:flex md:items-start md:gap-8">
+              <div class="flex-1">
+                <div class="flex items-center gap-3 text-xs text-slate-400 mb-1.5">
+                  <time x-text="article.date" class="font-mono"></time>
+                  <span>&middot;</span>
+                  <span class="font-mono" x-text="article.readTime"></span>
+                </div>
+                <h3 class="text-sm font-semibold text-slate-900 group-hover:text-blue-600 transition-colors" x-text="article.title"></h3>
+                <p class="mt-1 text-sm text-slate-400 leading-relaxed" x-text="article.description"></p>
+              </div>
+              <div class="mt-2 md:mt-0 flex items-center gap-2 shrink-0">
+                <span class="text-[10px] font-mono px-2 py-0.5 border border-slate-200 text-slate-400 rounded" x-text="article.tag"></span>
+                <svg class="w-3.5 h-3.5 text-slate-300 group-hover:text-slate-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              </div>
             </div>
-            <h2 class="text-lg font-semibold text-slate-900 group-hover:text-blue-600 transition-colors" x-text="article.title"></h2>
-            <p class="mt-1 text-sm text-slate-500 leading-relaxed" x-text="article.description"></p>
           </a>
         </template>
       </div>
