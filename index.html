@@ -68,7 +68,7 @@
             I build AI and platform products, from 0&rarr;1 to $1B+ scale.
           </h1>
           <p class="mt-6 text-lg text-slate-500 leading-relaxed">
-            Previously at Atlassian; now building AI products and advising on product strategy. At Atlassian I led growth and commercialization for a $6B+ Marketplace with 6K+ apps and 300K+ customers. 10+ years shipping products from 0&rarr;1 across AI, B2B SaaS, and commerce platforms.
+            10+ years shipping AI, B2B SaaS and commerce products. Previously led growth and commercialization for Atlassian's $6B+ Marketplace; now building AI products and advising on product strategy.
           </p>
           <p class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-emerald-700 bg-emerald-50 ring-1 ring-emerald-100 rounded-full px-3 py-1">
             <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
@@ -143,6 +143,7 @@
             <p class="text-xs font-medium text-slate-400 uppercase tracking-wider mb-2">Consumer · Founder · Live</p>
             <h3 class="text-base font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">Allez.city</h3>
             <p class="mt-2 text-sm text-slate-500 leading-relaxed">A city guide for the people who live there. Live in 5 cities.</p>
+            <span role="link" tabindex="0" onclick="event.preventDefault();event.stopPropagation();window.open('https://allez.city/','_blank','noopener')" onkeydown="if(event.key==='Enter'){event.preventDefault();event.stopPropagation();window.open('https://allez.city/','_blank','noopener')}" class="mt-3 inline-block text-sm font-medium text-slate-500 hover:text-slate-900 cursor-pointer">allez.city &#8599;</span>
           </div>
         </a>
       </div>
@@ -185,16 +186,16 @@
         </a>
 
         <!-- Case Study 3 -->
-        <a href="/work/enterprise-licensing.html" class="group block p-6 border border-slate-200 rounded-xl hover:border-slate-300 hover:shadow-sm transition-all">
-          <p class="text-xs font-medium text-slate-400 uppercase tracking-wider mb-2">Enterprise / Platform</p>
-          <p class="text-lg font-bold text-slate-900 font-mono">$15M+</p>
-          <p class="text-[10px] text-slate-400 uppercase tracking-wider font-mono mb-2">ACV enabled</p>
-          <h3 class="text-base font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">Enterprise Licensing for Marketplace</h3>
-          <p class="mt-2 text-sm text-slate-500 leading-relaxed">PwC, Citi, Ford, Honeywell, Accenture — 600K+ enterprise seats.</p>
+        <a href="/work.html" class="group block p-6 border border-slate-200 rounded-xl hover:border-slate-300 hover:shadow-sm transition-all">
+          <p class="text-xs font-medium text-slate-400 uppercase tracking-wider mb-2">AI Agents / Monetization</p>
+          <p class="text-lg font-bold text-slate-900 font-mono">~$20M</p>
+          <p class="text-[10px] text-slate-400 uppercase tracking-wider font-mono mb-2">ARR via pricing</p>
+          <h3 class="text-base font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">AI Agents on Marketplace: Strategy &amp; Pricing</h3>
+          <p class="mt-2 text-sm text-slate-500 leading-relaxed">Pricing models for 6K+ apps delivering ~$20M ARR, laying the path for AI agents on Marketplace (+$25M ARR projected).</p>
           <div class="mt-4 flex flex-wrap gap-2">
-            <span class="tag-pill text-xs px-2.5 py-1 bg-slate-100 text-slate-600 rounded-full">Enterprise</span>
-            <span class="tag-pill text-xs px-2.5 py-1 bg-slate-100 text-slate-600 rounded-full">Platform</span>
-            <span class="tag-pill text-xs px-2.5 py-1 bg-slate-100 text-slate-600 rounded-full">GTM</span>
+            <span class="tag-pill text-xs px-2.5 py-1 bg-slate-100 text-slate-600 rounded-full">AI Agents</span>
+            <span class="tag-pill text-xs px-2.5 py-1 bg-slate-100 text-slate-600 rounded-full">Pricing</span>
+            <span class="tag-pill text-xs px-2.5 py-1 bg-slate-100 text-slate-600 rounded-full">Platform Strategy</span>
           </div>
         </a>
 
@@ -208,6 +209,24 @@
         <a href="/blog.html" class="text-sm font-medium text-slate-400 hover:text-slate-700 transition-colors">All posts &rarr;</a>
       </div>
       <div class="space-y-6">
+
+        <!-- Latest Medium article (auto-synced from data/medium.json) -->
+        <div x-data="{ article: null }" x-init="fetch('data/medium.json', { cache: 'no-cache' }).then(r => r.json()).then(d => { if (d.length) article = d[0]; })">
+          <a x-show="article" x-cloak :href="article?.url" target="_blank" rel="noopener" class="group block p-6 border border-slate-200 rounded-xl hover:border-slate-300 hover:shadow-sm transition-all">
+            <div class="flex items-center gap-3 text-xs text-slate-400 mb-2">
+              <time x-text="article?.date"></time>
+              <span>&middot;</span>
+              <span x-text="article?.readTime"></span>
+              <span>&middot;</span>
+              <span class="inline-flex items-center gap-1 text-xs px-2 py-0.5 bg-slate-100 rounded-full">
+                <svg class="w-3 h-3" viewBox="0 0 24 24" fill="currentColor"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zm7.42 0c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42zm2.04 0c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75c.66 0 1.19 2.58 1.19 5.75z"/></svg>
+                Medium
+              </span>
+            </div>
+            <h3 class="text-base font-semibold text-slate-900 group-hover:text-blue-600 transition-colors" x-text="article?.title"></h3>
+            <p class="mt-1 text-sm text-slate-500" x-text="article?.description"></p>
+          </a>
+        </div>
 
         <a href="/blog/building-ai-products.html" class="group block p-6 border border-slate-200 rounded-xl hover:border-slate-300 hover:shadow-sm transition-all">
           <div class="flex items-center gap-3 text-xs text-slate-400 mb-2">
@@ -238,24 +257,6 @@
           <h3 class="text-base font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">From Engineer to Product Manager: What Nobody Tells You</h3>
           <p class="mt-1 text-sm text-slate-500">The mindset shifts, skill gaps, and hard-won lessons from switching from building to deciding what to build.</p>
         </a>
-
-        <!-- Latest Medium article (auto-synced from data/medium.json) -->
-        <div x-data="{ article: null }" x-init="fetch('data/medium.json', { cache: 'no-cache' }).then(r => r.json()).then(d => { if (d.length) article = d[0]; })">
-          <a x-show="article" x-cloak :href="article?.url" target="_blank" rel="noopener" class="group block p-6 border border-slate-200 rounded-xl hover:border-slate-300 hover:shadow-sm transition-all">
-            <div class="flex items-center gap-3 text-xs text-slate-400 mb-2">
-              <time x-text="article?.date"></time>
-              <span>&middot;</span>
-              <span x-text="article?.readTime"></span>
-              <span>&middot;</span>
-              <span class="inline-flex items-center gap-1 text-xs px-2 py-0.5 bg-slate-100 rounded-full">
-                <svg class="w-3 h-3" viewBox="0 0 24 24" fill="currentColor"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zm7.42 0c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42zm2.04 0c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75c.66 0 1.19 2.58 1.19 5.75z"/></svg>
-                Medium
-              </span>
-            </div>
-            <h3 class="text-base font-semibold text-slate-900 group-hover:text-blue-600 transition-colors" x-text="article?.title"></h3>
-            <p class="mt-1 text-sm text-slate-500" x-text="article?.description"></p>
-          </a>
-        </div>
 
       </div>
     </section>

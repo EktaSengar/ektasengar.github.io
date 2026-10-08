@@ -31,6 +31,8 @@ const EXCLUDED_SLUGS = [
 /** Strip HTML tags and decode common entities */
 function stripHtml(html = '') {
   return html
+    .replace(/<figure[\s\S]*?<\/figure>/gi, ' ')
+    .replace(/<\/(p|h[1-6]|li|blockquote|div)>/gi, ' ')
     .replace(/<[^>]*>/g, '')
     .replace(/&amp;/g, '&')
     .replace(/&lt;/g, '<')
@@ -110,11 +112,11 @@ async function main() {
     const rawTag = rawCategories.length > 0 ? rawCategories[0] : 'Personal';
     const tag = typeof rawTag === 'string' ? formatTag(rawTag) : 'Personal';
 
-    // Build description: prefer contentSnippet (auto-stripped by rss-parser),
-    // then strip HTML from content:encoded and grab first ~150 chars
+    // Build from HTML with figures (image captions) removed; fall back to
+    // rss-parser's contentSnippet, which keeps captions like "Photo by …".
     const snippet = (item.contentSnippet || '').trim();
     const contentText = stripHtml(item.contentEncoded || item.content || '');
-    const rawDescription = snippet || contentText;
+    const rawDescription = contentText || snippet;
     const description = truncate(rawDescription);
 
     const thumbnail = extractThumbnail(item.contentEncoded || item.content || '');
