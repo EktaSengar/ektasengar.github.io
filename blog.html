@@ -185,38 +185,7 @@
       return {
         filter: 'all',
         articles: [],
-        posts: [
-          {
-            title: "Building AI Products That Actually Ship",
-            url: "/blog/building-ai-products.html",
-            date: "2026-01-15",
-            dateDisplay: "Jan 15, 2026",
-            readTime: "7 min",
-            description: "Why most AI product initiatives stall, and a framework for getting from prototype to production. Covers prioritization, infra trade-offs, and the role of PMs in AI-native teams.",
-            tags: ["AI", "Product Strategy"],
-            featured: true
-          },
-          {
-            title: "The B2B SaaS Metrics That Actually Matter",
-            url: "/blog/saas-metrics.html",
-            date: "2025-12-08",
-            dateDisplay: "Dec 8, 2025",
-            readTime: "6 min",
-            description: "Beyond vanity metrics: a framework for choosing the indicators that drive real business outcomes.",
-            tags: ["B2B SaaS", "Analytics"],
-            featured: false
-          },
-          {
-            title: "From Engineer to Product Manager: What Nobody Tells You",
-            url: "/blog/engineer-to-pm.html",
-            date: "2025-11-20",
-            dateDisplay: "Nov 20, 2025",
-            readTime: "8 min",
-            description: "The mindset shifts, skill gaps, and hard-won lessons from switching from building to deciding what to build.",
-            tags: ["Career", "Systems Thinking"],
-            featured: false
-          }
-        ],
+        posts: [],
         get allTags() {
           return [...new Set(this.posts.flatMap(p => p.tags))];
         },
@@ -232,12 +201,11 @@
           return null;
         },
         async init() {
-          // Markdown posts from _posts/ (written in Pages CMS), merged with the hand-written ones above
+          // Posts live in _posts/ (edited in Pages CMS); Jekyll builds data/posts.json, newest first
           try {
             const res = await fetch('/data/posts.json', { cache: 'no-cache' });
             if (!res.ok) throw new Error(`HTTP ${res.status}`);
-            const mdPosts = await res.json();
-            this.posts = [...mdPosts, ...this.posts].sort((a, b) => b.date.localeCompare(a.date));
+            this.posts = await res.json();
           } catch (e) {
             console.error('Failed to load posts:', e);
           }

@@ -21,7 +21,7 @@ A minimal, static personal portfolio site optimized for GitHub Pages deployment.
 
 - **Content**: Edit HTML files directly. All placeholder text is marked clearly.
 - **Projects**: Update `data/projects.json` to add/remove projects.
-- **Blog posts**: Add new HTML files in `blog/` following the existing template.
+- **Blog posts**: Markdown files in `_posts/`, edited via Pages CMS (pagescms.org). Layout: `_layouts/post.html`.
 - **Case studies**: Add new HTML files in `work/` following the existing template.
 - **Styling**: Tailwind classes inline. Custom overrides in `css/custom.css`.
 - **Colors/Fonts**: Edit the `tailwind.config` object in any HTML `<head>`.
