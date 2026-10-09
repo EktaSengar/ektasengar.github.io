@@ -1,0 +1,15 @@
+---
+layout: null
+---
+[{% for post in site.posts %}
+  {
+    "title": {{ post.title | jsonify }},
+    "url": {{ post.url | jsonify }},
+    "date": {{ post.date | date: "%Y-%m-%d" | jsonify }},
+    "dateDisplay": {{ post.date | date: "%b %-d, %Y" | jsonify }},
+    "readTime": "{{ post.content | strip_html | number_of_words | divided_by: 220 | plus: 1 }} min",
+    "description": {{ post.description | default: post.excerpt | strip_html | strip_newlines | truncate: 220 | jsonify }},
+    "tags": {{ post.tags | jsonify }},
+    "featured": {{ post.featured | default: false | jsonify }}
+  }{% unless forloop.last %},{% endunless %}{% endfor %}
+]

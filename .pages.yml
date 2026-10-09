@@ -1,0 +1,38 @@
+# Pages CMS config — https://pagescms.org/docs/configuration/
+media:
+  input: assets/blog
+  output: /assets/blog
+content:
+  - name: posts
+    label: Blog posts
+    type: collection
+    path: _posts
+    filename: "{year}-{month}-{day}-{primary}.md"
+    view:
+      fields: [title, date, featured]
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: description
+        label: Short description (shown on the blog list)
+        type: text
+      - name: date
+        label: Date
+        type: date
+        required: true
+      - name: tags
+        label: Tags
+        type: string
+        list: true
+      - name: cover
+        label: Cover image (optional, square works best)
+        type: image
+      - name: featured
+        label: Feature at top of blog page
+        type: boolean
+        default: false
+      - name: body
+        label: Post
+        type: rich-text

@@ -1,0 +1,14 @@
+# Jekyll turns Markdown posts in _posts/ into pages under /blog/.
+# Existing .html pages have no front matter, so they're copied as-is.
+title: Ekta Sengar
+markdown: kramdown
+permalink: /blog/:title.html
+exclude:
+  - README.md
+  - .pages.yml
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post

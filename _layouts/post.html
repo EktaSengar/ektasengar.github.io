@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} — Ekta Sengar</title>
+  <meta name="description" content="{{ page.description | escape }}">
+  <meta property="og:title" content="{{ page.title | escape }}">
+  <meta property="og:description" content="{{ page.description | escape }}">
+  <meta property="og:type" content="article">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'], serif: ['Newsreader', 'Georgia', 'serif'] }
+        }
+      }
+    }
+  </script>
+  <!-- KaTeX: write math as $$ ... $$ in posts -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.getElementById('article'), {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]})"></script>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EN4Q39EQFW"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EN4Q39EQFW');</script>
+  <link rel="stylesheet" href="/css/custom.css">
+  {% if page.cover %}<meta property="og:image" content="{{ page.cover | absolute_url }}">{% endif %}
+  <style>
+    /* Post reading styles — larger type and narrower measure than the default .prose */
+    .post-body { font-family: 'Newsreader', Georgia, serif; font-size: 1.25rem; color: #1e293b; }
+    .post-body h3 { font-family: 'Inter', system-ui, sans-serif; }
+    .post-body code, .post-body pre { font-size: 0.9rem; }
+    .post-body p, .post-body ul li, .post-body ol li { line-height: 1.7; }
+    .post-body h2 { font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: 1.75rem; line-height: 1.25; margin-top: 3rem; letter-spacing: -0.01em; }
+    .post-body h3 { margin-top: 2.25rem; }
+    .post-body ol { list-style-type: decimal; padding-left: 1.5rem; margin-bottom: 1.25rem; }
+    .post-body a { color: #0f172a; text-decoration: underline; text-decoration-color: #cbd5e1; text-underline-offset: 3px; }
+    .post-body a:hover { color: #2563eb; text-decoration-color: #2563eb; }
+    .post-body img { border-radius: 0.75rem; margin: 2rem 0; border: 1px solid #e2e8f0; }
+    .post-body blockquote { font-family: 'Newsreader', Georgia, serif; font-size: 1.375rem; line-height: 1.5; color: #0f172a; border-left-color: #2563eb; }
+    .post-body hr { margin: 3rem 0; border-color: #f1f5f9; }
+    .post-body table { width: 100%; font-size: 0.9375rem; margin: 1.5rem 0; }
+    .post-body th, .post-body td { border-bottom: 1px solid #e2e8f0; padding: 0.5rem 0.75rem 0.5rem 0; text-align: left; }
+  </style>
+</head>
+<body class="font-sans text-slate-600 bg-white antialiased">
+
+  <!-- NAV -->
+  <nav x-data="{ open: false }" class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="flex items-center gap-2 text-lg font-semibold text-slate-900 tracking-tight"><img src="/assets/logo.png" alt="" class="w-8 h-8 rounded-full">Ekta Sengar</a>
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+          <a href="/work.html" class="text-slate-500 hover:text-slate-900 transition-colors">Work</a>
+          <a href="/projects.html" class="text-slate-500 hover:text-slate-900 transition-colors">Projects</a>
+          <a href="/blog.html" class="text-slate-900 font-semibold">Blog</a>
+          <a href="/about.html" class="text-slate-500 hover:text-slate-900 transition-colors">About</a>
+        </div>
+        <button @click="open = !open" class="md:hidden p-2 -mr-2 text-slate-500 hover:text-slate-900" aria-label="Toggle menu">
+          <svg x-show="!open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg x-show="open" x-cloak class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div x-show="open" x-transition x-cloak class="md:hidden pb-4 space-y-1 border-t border-slate-100 pt-3">
+        <a href="/work.html" class="block py-2 text-sm text-slate-600 hover:text-slate-900">Work</a>
+        <a href="/projects.html" class="block py-2 text-sm text-slate-600 hover:text-slate-900">Projects</a>
+        <a href="/blog.html" class="block py-2 text-sm font-semibold text-slate-900">Blog</a>
+        <a href="/about.html" class="block py-2 text-sm text-slate-600 hover:text-slate-900">About</a>
+      </div>
+    </div>
+  </nav>
+
+  
+  <main class="max-w-5xl mx-auto px-6">
+
+    <!-- BREADCRUMB -->
+    <div class="pt-8">
+      <a href="/blog.html" class="text-sm text-slate-400 hover:text-slate-600 transition-colors">&larr; All posts</a>
+    </div>
+
+    <!-- HEADER — big serif title + italic subtitle, cover image optional -->
+    <header class="pt-12 md:pt-16 pb-12 max-w-3xl">
+      {% if page.cover %}
+      <img src="{{ page.cover }}" alt="" class="w-24 h-24 md:w-28 md:h-28 rounded-2xl object-cover mb-10 border border-slate-200">
+      {% endif %}
+      <p class="text-[10px] font-mono text-slate-400 uppercase tracking-wider mb-5">// {{ page.tags | first | default: "essay" }}</p>
+      <h1 class="font-serif text-4xl md:text-6xl font-normal text-slate-900 leading-[1.08] tracking-tight">{{ page.title }}</h1>
+      {% if page.description %}<p class="mt-6 font-serif italic text-xl md:text-2xl text-slate-500 leading-snug">{{ page.description }}</p>{% endif %}
+    </header>
+
+    <!-- BODY + META SIDEBAR — sidebar sits right on desktop, above the article on mobile -->
+    <div class="border-t border-slate-100 pt-10 md:pt-14 md:grid md:grid-cols-[minmax(0,1fr)_200px] md:gap-16">
+
+      <aside class="md:order-2 mb-10 md:mb-0">
+        <dl class="md:sticky md:top-28 grid grid-cols-2 md:grid-cols-1 gap-x-6 gap-y-5 text-sm">
+          {% if page.tags.size > 0 %}<div>
+            <dt class="text-[10px] font-mono text-slate-400 uppercase tracking-wider mb-1.5">Topics</dt>
+            <dd class="flex flex-wrap gap-1.5">{% for tag in page.tags %}<span class="text-[11px] font-mono px-2 py-0.5 border border-slate-200 text-slate-500 rounded">{{ tag }}</span>{% endfor %}</dd>
+          </div>{% endif %}
+          <div>
+            <dt class="text-[10px] font-mono text-slate-400 uppercase tracking-wider mb-1.5">Published</dt>
+            <dd class="text-slate-700"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time></dd>
+          </div>
+          <div>
+            <dt class="text-[10px] font-mono text-slate-400 uppercase tracking-wider mb-1.5">Reading time</dt>
+            <dd class="text-slate-700" data-reading-time="#article">{{ content | strip_html | number_of_words | divided_by: 220 | plus: 1 }} min</dd>
+          </div>
+          <div x-data="{ copied: false }">
+            <dt class="text-[10px] font-mono text-slate-400 uppercase tracking-wider mb-1.5">Share</dt>
+            <dd class="flex flex-col gap-1 items-start">
+              <button @click="navigator.clipboard.writeText(location.href); copied = true; setTimeout(() => copied = false, 1500)" class="text-slate-700 hover:text-blue-600 transition-colors" x-text="copied ? 'Copied ✓' : 'Copy link'">Copy link</button>
+              <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url | uri_escape }}" target="_blank" rel="noopener" class="text-slate-700 hover:text-blue-600 transition-colors">LinkedIn</a>
+              <a href="https://x.com/intent/post?url={{ page.url | absolute_url | uri_escape }}&text={{ page.title | uri_escape }}" target="_blank" rel="noopener" class="text-slate-700 hover:text-blue-600 transition-colors">X</a>
+            </dd>
+          </div>
+        </dl>
+      </aside>
+
+      <!-- ARTICLE -->
+      <article id="article" class="prose post-body max-w-2xl md:order-1">
+{{ content }}
+      </article>
+    </div>
+
+    <!-- POST FOOTER -->
+    <div class="mt-16 border-t border-slate-100 py-12">
+      {% if page.previous or page.next %}
+      <p class="text-[10px] font-mono text-slate-400 uppercase tracking-wider mb-6">// keep reading</p>
+      <div class="grid sm:grid-cols-2 gap-4">
+        {% if page.previous %}<a href="{{ page.previous.url }}" class="group block p-6 border border-slate-200 rounded-xl hover:border-slate-300 transition-colors">
+          <p class="text-xs font-mono text-slate-400 mb-2">{{ page.previous.date | date: "%b %-d, %Y" }}</p>
+          <p class="font-serif text-xl text-slate-900 group-hover:text-blue-600 transition-colors leading-snug">{{ page.previous.title }}</p>
+        </a>{% endif %}
+        {% if page.next %}<a href="{{ page.next.url }}" class="group block p-6 border border-slate-200 rounded-xl hover:border-slate-300 transition-colors">
+          <p class="text-xs font-mono text-slate-400 mb-2">{{ page.next.date | date: "%b %-d, %Y" }}</p>
+          <p class="font-serif text-xl text-slate-900 group-hover:text-blue-600 transition-colors leading-snug">{{ page.next.title }}</p>
+        </a>{% endif %}
+      </div>
+      {% endif %}
+      <div class="mt-8 flex justify-between items-center">
+        <p class="text-sm text-slate-500">Thanks for reading.</p>
+        <a href="/blog.html" class="text-sm text-slate-400 hover:text-slate-600 transition-colors">All posts &rarr;</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-200">
+    <div class="max-w-5xl mx-auto px-6 py-10">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-sm text-slate-400">&copy; 2026 Ekta Sengar. All rights reserved.</p>
+        <div class="flex gap-6 text-sm text-slate-400">
+          <a href="https://github.com/ektasengar" class="hover:text-slate-700 transition-colors">GitHub</a>
+          <a href="https://linkedin.com/in/ektasengar" class="hover:text-slate-700 transition-colors">LinkedIn</a>
+          <a href="https://medium.com/@ekta-sengar" class="hover:text-slate-700 transition-colors">Medium</a>
+          <a href="mailto:sengar.ekta@gmail.com" class="hover:text-slate-700 transition-colors">Email</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

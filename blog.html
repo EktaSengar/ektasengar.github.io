@@ -217,18 +217,30 @@
             featured: false
           }
         ],
-        allTags: ["AI", "B2B SaaS", "Product Strategy", "Analytics", "Career", "Systems Thinking"],
+        get allTags() {
+          return [...new Set(this.posts.flatMap(p => p.tags))];
+        },
         get filteredPosts() {
           if (this.filter === 'all') return this.posts;
           return this.posts.filter(p => p.tags.includes(this.filter));
         },
         get featuredPost() {
+          // Newest featured post wins (posts are sorted newest first)
           const featured = this.posts.find(p => p.featured);
           if (this.filter === 'all') return featured;
           if (featured && featured.tags.includes(this.filter)) return featured;
           return null;
         },
         async init() {
+          // Markdown posts from _posts/ (written in Pages CMS), merged with the hand-written ones above
+          try {
+            const res = await fetch('/data/posts.json', { cache: 'no-cache' });
+            if (!res.ok) throw new Error(`HTTP ${res.status}`);
+            const mdPosts = await res.json();
+            this.posts = [...mdPosts, ...this.posts].sort((a, b) => b.date.localeCompare(a.date));
+          } catch (e) {
+            console.error('Failed to load posts:', e);
+          }
           try {
             const res = await fetch('data/medium.json', { cache: 'no-cache' });
             if (!res.ok) throw new Error(`HTTP ${res.status}`);
