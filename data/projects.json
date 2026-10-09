@@ -49,7 +49,7 @@
     "github": "https://github.com/ektasengar"
   },
   {
-    "name": "Jobbie — AI Job Search Platform",
+    "name": "Jobbie: AI Job Search Platform",
     "description": "AI-powered job search platform using RAG for intelligent matching. Aggregates listings from 9 sources (Greenhouse, Lever, Ashby, etc.), features NLP search, resume-based matching, and an AI career assistant. Built with React, Node.js, PostgreSQL, and vector search.",
     "tags": ["AI", "Full Stack", "LLM", "RAG"],
     "demo": null,

@@ -8,19 +8,19 @@ featured: false
 
 Three years ago I made the switch from software engineering to product management. I'd read the blog posts, taken the courses, and talked to PMs at my company. I felt prepared. I was not.
 
-Not because the job was harder than expected — though it was — but because the nature of the difficulty was different from what I'd anticipated. The hard parts of PM weren't the parts I'd been warned about. Here's what I wish someone had told me.
+Not because the job was harder than expected (though it was), but because the nature of the difficulty was different from what I'd anticipated. The hard parts of PM weren't the parts I'd been warned about. Here's what I wish someone had told me.
 
 ## The biggest mindset shift: from certainty to ambiguity
 
 As an engineer, most problems have a correct answer. The code compiles or it doesn't. The test passes or it doesn't. The API returns 200 or 500. There's a deeply satisfying clarity to engineering work.
 
-Product management operates in perpetual ambiguity. You're making decisions with incomplete information, conflicting signals, and uncertain outcomes. There's rarely a "correct" answer — just better and worse bets. And you often won't know which bet was right for months after you've made it.
+Product management operates in perpetual ambiguity. You're making decisions with incomplete information, conflicting signals, and uncertain outcomes. There's rarely a "correct" answer, just better and worse bets. And you often won't know which bet was right for months after you've made it.
 
-This shift was genuinely uncomfortable. For the first six months, I kept trying to engineer my way to certainty: more data, more research, more analysis. Eventually I learned that the goal isn't to eliminate uncertainty — it's to make good decisions despite it.
+This shift was genuinely uncomfortable. For the first six months, I kept trying to engineer my way to certainty: more data, more research, more analysis. Eventually I learned that the goal isn't to eliminate uncertainty. It's to make good decisions despite it.
 
 ## You lose the maker's high
 
-Engineering gives you the maker's high — that rush of creating something tangible, seeing your code run, watching tests go green. It's addictive and it's immediate.
+Engineering gives you the maker's high: that rush of creating something tangible, seeing your code run, watching tests go green. It's addictive and it's immediate.
 
 Product management gives you... meetings. Documents. Spreadsheets. The feedback loop is measured in weeks and months, not hours. Your "output" is decisions, and decisions don't give you a dopamine hit.
 
@@ -30,12 +30,12 @@ I dealt with this by maintaining a side project where I could code, and by learn
 
 I assumed my engineering background would be most valuable for making technical architecture decisions. That turned out to be a small part of it. Where it actually helps the most:
 
-- **Earning engineering trust.** Engineers can tell immediately whether a PM has technical credibility. When you can discuss trade-offs in their language — latency vs. consistency, monolith vs. microservices, build vs. buy — they trust your judgment more.
+- **Earning engineering trust.** Engineers can tell immediately whether a PM has technical credibility. When you can discuss trade-offs in their language (latency vs. consistency, monolith vs. microservices, build vs. buy), they trust your judgment more.
 - **Estimating feasibility quickly.** You can assess whether a feature idea is a weekend project or a quarter-long effort without needing to schedule a scoping session.
 - **Prototyping.** Being able to build quick prototypes to test ideas before committing engineering resources is a superpower. Most PMs can't do this.
 - **Debugging requirements.** When something doesn't work as expected, you can read the code to understand why, rather than playing telephone between users and engineers.
 
-Where it doesn't help — and can actively hurt — is when you start dictating technical solutions instead of defining problems. The fastest way to lose engineering trust is to tell engineers how to build something when your job is to tell them what to build and why.
+Where it doesn't help, and can actively hurt, is when you start dictating technical solutions instead of defining problems. The fastest way to lose engineering trust is to tell engineers how to build something when your job is to tell them what to build and why.
 
 ## The skill gaps nobody warned me about
 
@@ -65,6 +65,6 @@ After three years, I'm glad I made the transition. But I think it's important to
 
 ## The bottom line
 
-The engineer-to-PM transition isn't about learning a new set of tools. It's about rewiring how you think about value, uncertainty, and influence. The technical background gives you a real advantage — but only if you're willing to operate in a fundamentally different mode than what made you successful as an engineer.
+The engineer-to-PM transition isn't about learning a new set of tools. It's about rewiring how you think about value, uncertainty, and influence. The technical background gives you a real advantage, but only if you're willing to operate in a fundamentally different mode than what made you successful as an engineer.
 
-If ambiguity energizes you, if you care more about why we're building something than how, and if you get satisfaction from enabling others to do great work — this might be the right move. If the maker's high and the certainty of code are what drive you, there's absolutely nothing wrong with staying on the engineering track. Both paths create enormous value.
+If ambiguity energizes you, if you care more about why we're building something than how, and if you get satisfaction from enabling others to do great work, this might be the right move. If the maker's high and the certainty of code are what drive you, there's absolutely nothing wrong with staying on the engineering track. Both paths create enormous value.

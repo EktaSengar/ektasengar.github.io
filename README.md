@@ -1,4 +1,4 @@
-# Portfolio — Product Manager
+# Portfolio: Product Manager
 
 A minimal, static personal portfolio site optimized for GitHub Pages deployment.
 
@@ -28,10 +28,10 @@ A minimal, static personal portfolio site optimized for GitHub Pages deployment.
 
 ## Stack
 
-- **HTML** — static pages, no build step
-- **Tailwind CSS** — via CDN (play script)
-- **Alpine.js** — via CDN (filtering, mobile nav)
-- **Zero dependencies** — no npm, no bundler, no framework
+- **HTML**: static pages, no build step
+- **Tailwind CSS**: via CDN (play script)
+- **Alpine.js**: via CDN (filtering, mobile nav)
+- **Zero dependencies**: no npm, no bundler, no framework
 
 ## Structure
 

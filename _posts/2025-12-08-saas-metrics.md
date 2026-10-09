@@ -12,7 +12,7 @@ Here's what I've learned about metrics after working on several B2B products: th
 
 ## The problem with vanity metrics
 
-A vanity metric is any number that goes up and to the right but doesn't connect to a business outcome. Total registered users is the classic example — it never goes down, even when your product is dying. But vanity metrics are more subtle than that. Even "good" metrics become vanity metrics when they're disconnected from your current business context.
+A vanity metric is any number that goes up and to the right but doesn't connect to a business outcome. Total registered users is the classic example. It never goes down, even when your product is dying. But vanity metrics are more subtle than that. Even "good" metrics become vanity metrics when they're disconnected from your current business context.
 
 DAU is a great metric for a consumer social app. For an enterprise B2B tool used weekly by 3 people per account, it's meaningless. NPS is useful for tracking customer sentiment trends, but it's a terrible metric for a feature launch because it moves too slowly and is influenced by too many factors.
 
@@ -53,13 +53,13 @@ At scale, the metrics become more operational and segmented:
 
 - **Gross margin:** Can you deliver your product efficiently? Infrastructure costs, support costs, and professional services all eat into margin.
 - **Logo churn vs. revenue churn:** Are you losing small customers (normal) or large ones (emergency)?
-- **Expansion revenue as % of new ARR:** Healthy B2B SaaS companies get 30–50% of new ARR from existing customers.
+- **Expansion revenue as % of new ARR:** Healthy B2B SaaS companies get 30 to 50% of new ARR from existing customers.
 
 ## The north star metric trap
 
 A lot of product writing advocates for a single "north star metric." In theory, it creates focus. In practice, a single metric creates perverse incentives and blind spots.
 
-I prefer a north star metric paired with 2–3 guardrail metrics. The north star is what you're optimizing for. Guardrails are what you're protecting. For example: north star = weekly active reports created (measures core value delivery). Guardrails = report load time under 2 seconds (quality), support tickets per 100 users (usability), data accuracy rate (trust).
+I prefer a north star metric paired with 2 or 3 guardrail metrics. The north star is what you're optimizing for. Guardrails are what you're protecting. For example: north star = weekly active reports created (measures core value delivery). Guardrails = report load time under 2 seconds (quality), support tickets per 100 users (usability), data accuracy rate (trust).
 
 The north star tells you if you're winning. The guardrails tell you if you're winning sustainably.
 
@@ -71,7 +71,7 @@ A few principles I come back to when setting up metrics for a product or feature
 - **Instrument before you ship.** Deciding what to measure after launch means you'll never have clean baseline data.
 - **Review less, but deeper.** A weekly 30-minute deep dive on 3 metrics beats a daily scan of 15 dashboards.
 - **Segment everything.** Aggregate metrics hide the story. Break down by customer size, cohort, plan tier, geography. The average is almost never the answer.
-- **Set alerts on leading indicators.** If week-1 activation drops 10%, you want to know immediately — not in next month's business review.
+- **Set alerts on leading indicators.** If week-1 activation drops 10%, you want to know immediately, not in next month's business review.
 
 ## The bottom line
 
